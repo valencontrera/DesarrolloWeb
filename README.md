@@ -1,2 +1,2 @@
-primer 
+modificacion readme
 comentario
