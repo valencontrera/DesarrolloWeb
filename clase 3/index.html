@@ -10,9 +10,143 @@
 
 <body>
     <main>
-        <h1>Login</h1>
+        <h1>Solicitud de Preinforme de Homologaciones</h1>
         <form action="">
             <div>
+                <h2>1 Solicitud de preinformes</h2>
+                <p>Carrera: T1-23 INGENIERÍA EN SISTEMAS INFORMÁTICOS</p>
+                <p>Modalidad: Presencial</p>
+                <p>(Todas las carreras presenciales pueden contener: asignaturas que se cursan 100 % en modalidad Virtual, asignaturas que se cursan 100 % en modalidad Presencial y asignaturas híbridas que se cursan en modalidad presencial y/ o virtual)</p>
+
+                <div>
+                    <div>
+                        <label for="sede">* Localización de Preferencia:</label>
+                    </div>
+                    <div>
+                        <select id="sede" name="sede">
+                        <option value="">Elija...</option>
+                        <option value="090">090 - UAI - LOMAS - Buenos Aires</option>
+                        <option value="091">091 - UAI - CENTRO - Buenos Aires</option>
+                        <option value="093">093 - UAI - NORTE - Buenos Aires</option>
+                        <option value="095">095 - UAI - CASTELAR - Buenos Aires</option>
+                        <option value="120">120 - UAI - REGIONAL ROSARIO - Rosario</option>
+                    </select>
+                    </div>
+                </div>
+                <p>Seleccione una localización de preferencia en donde le gustaría cursar la carrera en caso de inscribirse.</p>
+            </div>
+
+            <div>
+                <h2>2 Datos Personales</h2>
+                <div>
+                    <div>
+                        <label for="idDocumento_tipo">* Tipo de documento:</label><br>
+
+                        <select id="idDocumento_tipo" name="documento_tipo">
+                        <option value="CI">Cédula de identidad de Mercosur</option>
+                        <option value="DNI" selected="">D.N.I.</option>
+                        <option value="DNIE">D.N.I. de otro país</option>
+                        <option value="LC">Libreta cívica</option>
+                        <option value="LE">Libreta de enrolamiento</option>
+                        <option value="ODE">Otro documento Extranjero</option>
+                        <option value="PAS">Pasaporte Extranjero</option>
+                        <option value="RP">Residencia Precaria</option>
+                    </select>
+                    </div>
+                    <div>
+                        <label for="idDocumento_valor">* Número de documento:</label><br>
+                        <input type="text" name="documento_valor" id="idDocumento_valor" placeholder="Ingrese su Socumento" />
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <div>
+                        <label for="nom">* Nombre:</label><br>
+                        <input type="text" name="nombre" id="nom" placeholder="Ingrese su Nombre" />
+                    </div>
+                    <div>
+
+                        <label for="ape">* Apellido:</label><br>
+                        <input type="text" name="apellido" id="ape" placeholder="Ingrese su Apellido" />
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <label for="email">* E-Mail:</label><br>
+                    <input type="email" name="email" id="email" placeholder="Ingrese su Email" />
+                </div>
+                <br>
+                <div>
+                    <div>
+                        <label for="tel_movil">** Teléfono móvil:</label><br>
+                        <input type="number" name="tel_movil" id="tel_movil" placeholder="Ingrese su Teléfono" />
+                    </div>
+                    <div>
+
+                        <label for="tel_fijo">** Teléfono fijo:</label><br>
+                        <input type="number" name="tel_fijo" id="tel_fijo" placeholder="Ingrese su Teléfono" />
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2>3 Carrera Origen</h2>
+
+                <p>Si el plan de estudio del instituto de origen pertenece a la UAI, a un Colegio Universitario de la UAI o a una carrera de Institución Educativa conveniada con UAI, seleccione esta opción:</p>
+                <input type="checkbox" name="pertenece" id="pertenece">
+                <p>Esta opción desactiva la obligatoriedad de las cargas de los programas de cada asignatura en el formulario</p>
+                <div>
+                    <div>
+                        <label for="instituto">* Institución Origen:</label><br>
+                        <input type="text" name="instituto" id="instituto" placeholder="Ingrese Institución de Origen" />
+                    </div>
+                    <div>
+                        <label for="analitico">** Adjunte el certificado analítico:</label><br>
+                        <input type="file" name="analitico" id="analitico">
+                        <p>** Al menos uno de los dos.</p>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <div>
+                        <label for="carrera">* Carrera Origen:</label><br>
+                        <input type="text" name="carrera" id="carrera" placeholder="Ingrese Carrera de Origen" />
+                    </div>
+                    <div>
+                        <label for="libreta">** Adjunte la libreta universitaria:</label><br>
+                        <input type="file" name="libreta" id="libreta">
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <div>
+                        <label for="resolucion">* Resolución Origen:</label><br>
+                        <input type="text" name="resolucion" id="resolucion" placeholder="Ingrese Resolucion" />
+                    </div>
+                    <div>
+                        <label for="plan_estudio">Adjunte la estructura curricular o plan de estudio:</label><br>
+                        <input type="file" name="plan_estudio" id="plan_estudio">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2>4 Asignaturas de Origen para preinforme de equivalencias</h2>
+                <button type="button">Agregar asIgnatura</button>
+                <p>TABLA</p>
+            </div>
+
+            <div>
+
+                <h2>5 Observaciones</h2>
+
+                <legend>Observaciones (opcional):</legend>
+                <textarea name="comentario" cols="200" rows="5"></textarea>
+            </div>
+
+            <button type="submit">Confirmar y Enviar</button>
+
+            <!-- <div>
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" placeholder="Ingrese email" />
             </div>
@@ -76,8 +210,7 @@
             <div>
                 <label for="archivo">Archivo</label>
                 <input type="file" name="archivo" id="archivo">
-            </div>
-            <button type="submit">Send</button>
+            </div> -->
         </form>
 
     </main>
