@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 3</title>
+    <link rel="stylesheet" href="style2.css">
+
+</head>
+
+<body>
+    <main>
+        <h1>Solicitud de Preinforme de Homologaciones</h1>
+        <form action="">
+
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Ingrese email" />
+            </div>
+            <div>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Ingrese nombre" />
+            </div>
+            <div>
+                <label for="apellido">Apellido</label>
+                <input type="text" name="apellido" id="apellido" placeholder="Ingrese apellido" />
+            </div>
+            <div>
+                <label for="edad">Edad</label>
+                <input type="number" min="0" name="edad" id="edad" placeholder="Ingrese edad" />
+            </div>
+            <div>
+                <legend>Materia</legend>
+                <label for="medicina">Medicina</label>
+                <input type="checkbox" name="estudios" id="medicina">
+                <label for="ingeniería">Ingeniería</label>
+                <input type="checkbox" name="estudios" id="ingeniería" checked="true">
+                <label for="kinesio">Kinesiología</label>
+                <input type="checkbox" name="estudios" id="kinesio">
+            </div>
+            <div>
+                <legend>Estado Civil</legend>
+                <label for="soltero">Soltero</label><input type="radio" name="estado" id="soltero" checked="true">
+                <label for="casados">Casado</label><input type="radio" name="estado" id="casado">
+                <label for="viudo">Viudo</label><input type="radio" name="estado" id="viudo">
+            </div>
+            <div>
+                <label for="sede">Sede</label>
+                <select id="sede" name="sede">
+                    <option value="lagos">Ovidio Lagos</option>
+                    <option value="pellegrini">Pellegrini</option>
+                    <option value="roca">Roca</option>
+
+                </select>
+            </div>
+            <div>
+
+                <label for="fecha">Fecha de nacimiento</label>
+                <input type="date" name="fecha" id="fecha">
+            </div>
+            <div>
+                <label for="contra">Contraseña</label>
+                <input type="password" name="contrasenia" id="contra" placeholder="Ingrese contraseña" />
+            </div>
+            <div>
+                <legend>Comentarios</legend>
+                <textarea name="comentario" cols="30" rows="10"></textarea>
+            </div>
+            <div>
+                <label for="precio">Precio</label>
+                <input type="range" name="precio" id="precio">
+            </div>
+            <div>
+                <label for="color">Color</label>
+                <input type="color" name="color" id="color">
+            </div>
+            <div>
+                <label for="archivo">Archivo</label>
+                <input type="file" name="archivo" id="archivo">
+            </div>
+
+            <input type="button" name="rojo" value="rojo">
+            <input type="button" name="azul" value="azul">
+            <input type="button" name="verde" value="verde">
+
+            <button type="submit">Confirmar y Enviar</button>
+
+        </form>
+
+    </main>
+</body>
+
+</html>

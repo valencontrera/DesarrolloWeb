@@ -1,0 +1,17 @@
+main {
+    background-color: palevioletred;
+}
+
+div {
+    margin: 20px;
+}
+
+button {
+    margin: 20px;
+}
+
+input[type="button"] {
+    background-color: blue;
+    width: 100px;
+    cursor: pointer;
+}

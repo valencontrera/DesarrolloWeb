@@ -1,0 +1,82 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Bambino New';
+}
+
+#nav {
+    list-style: none;
+    /* font-family: 'Times New Roman', Times, serif; */
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#cuerpo {
+    max-width: 60%;
+}
+
+h1,
+h3 {
+    font-size: 2.75em;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.25em;
+    font-weight: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.496);
+    padding-bottom: 20px;
+}
+
+.pie-de-pagina {
+    margin-top: 5px;
+    margin-bottom: 50px;
+    color: rgba(255, 255, 255, 0.415);
+}
+
+.rojo {
+    color: red;
+}
+
+.img {
+    width: 100%;
+}
+
+.blanco-oscuro,
+h4 {
+    font-weight: 900;
+    font-size: 22px;
+}
+
+.blanco-claro {
+    color: rgba(255, 255, 255, 0.733);
+    font-size: 20px;
+}
+
+#list {
+    list-style: none;
+}
+
+#list li {
+    margin-bottom: 10px;
+}
+
+#list li::before {
+    content: "\2022";
+    padding-right: 20px;
+    color: red;
+}
+
+footer {
+    margin-top: 80px;
+    text-align: center;
+    background-color: rgb(67, 67, 67);
+    font-family: cursive;
+    font-size: 12px;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
