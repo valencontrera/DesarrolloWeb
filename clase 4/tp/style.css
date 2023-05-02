@@ -8,6 +8,17 @@ body {
     list-style: none;
     /* font-family: 'Times New Roman', Times, serif; */
     font-size: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+#header {
+    display: flex;
+    flex-direction: row;
+}
+
+#nav li {
+    margin-right: 25px;
 }
 
 a {
