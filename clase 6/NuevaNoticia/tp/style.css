@@ -271,7 +271,7 @@ footer div{
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 400px) {
 
     .cabecera{
         padding: 6px;
