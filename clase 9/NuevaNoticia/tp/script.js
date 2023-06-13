@@ -13,7 +13,10 @@ var codigoPostal = document.getElementById('Cpostal')
 var contrasenia = document.getElementById('Contrasenia')
 var contrasenia2 = document.getElementById('Contrasenia2')
 var boton = document.getElementById('boton')
+var titulo = document.getElementById('titulo')
 
+
+nombre.addEventListener('keyup', modificarTitulo)
 boton.addEventListener('click', enviar)
 nombre.addEventListener('blur', verErrores)
 edad.addEventListener('blur', verErrores)
@@ -37,6 +40,16 @@ codigoPostal.addEventListener('focus', deshabilitarSpan)
 contrasenia.addEventListener('focus', deshabilitarSpan)
 contrasenia2.addEventListener('focus', deshabilitarSpan)
 
+function modificarTitulo()
+{
+    if(nombre.value.length!=0)
+    {
+        titulo.textContent = 'SUSCRIPCION de ' + nombre.value       
+    }
+    else {
+        titulo.textContent = 'SUSCRIPCION'
+    }
+}
 
 function verErrores(e)
 { 
