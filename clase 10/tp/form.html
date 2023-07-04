@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Suscripcion</title>
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="bodyForm">
+    <!-- <div class="contenedor"> -->
+        <header class="header">
+            <div class="cabecera">
+                <h1>El Observador</h1>
+                <p>Domingo 14 de Mayo del 2023</p>
+                <div class="menu">
+                    <p>MENU</p>
+                    <img src="menu.svg" class="iconoMenu">
+                </div>
+            </div> 
+                
+           
+            <nav class="nav">
+                <ul>
+                    <li> <a href="index.html">Inicio</a></li>
+                    <li> <a href="#">Política</a></li>
+                    <li> <a href="#">Salud</a></li>
+                    <li> <a href="#">Economía</a></li>
+                    <li> <a href="#">Tecnología</a></li>
+                    <li> <a href="#">Espectáculos</a></li>
+                    <li> <a href="#">Deporte</a></li>
+                    <li> <a href="#">Accidentes</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="form">
+            <section>
+                <h1 id="titulo">SUSCRIPCION</h1>
+                <article>
+                    <form action="" id="formulario">
+                    <div>
+                        <div class="col1">
+                            <div class="group">
+                                <div>
+                                    <label for="Nombre">Nombre</label>
+                                    <input type="text" name="nombre" id="Nombre" placeholder="Ingrese nombre" />
+                                </div>
+                                
+                                <div>
+                                  <span id="inputNombre" style="display:none;">*Debe tener 6 o más letras y un espacio en medio</span>
+                                </div>
+                            </div>
+                            <div class="group"> 
+                                <div>
+                                    <label for="Contrasenia">Contraseña</label>
+                                    <input type="password" name="contrasenia" id="Contrasenia" placeholder="********" />
+                               </div>
+                                <div>
+                                    <span id="inputContrasenia" style="display:none;">*Debe tener 8 o más caracteres, con letras y números</span>
+                                </div>
+                            </div>
+                            <div class="group">
+                                <div>
+                                    <label for="Edad">Edad</label>
+                                    <input type="number" min="18" name="edad" id="Edad" placeholder="Ingrese edad" />
+                                </div>
+                                
+                                <div>
+                                    <span id="inputEdad" style="display:none;">*Debe ser número entero mayor o igual a 18</span>
+                                </div>
+                                
+                            </div>
+                            <div class="group"> 
+                                <div>
+                                    <label for="Telefono">Teléfono</label>
+                                    <input type="number" min="0" name="telefono" id="Telefono" placeholder="Ingrese teléfono" />
+                                </div>
+                                <div>
+                                    <span id="inputTelefono" style="display:none;">*Debe 7 o más dígitos numéricos y no tener espacio, guiones ni paréntesis</span>
+                                </div>
+                            </div>
+                            <div class="group">
+                                <div>
+                                    <label for="Ciudad">Ciudad</label>
+                                    <input type="text" name="ciudad" id="Ciudad" placeholder="Ingrese Ciudad"/>
+                                </div>
+                           
+                                <div>
+                                    <span id="inputCiudad" style="display:none;">*Debe tener al menos 3 caracteres</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="col2">
+                            <div class="group">
+                                <div>
+                                    <label for="Email">Email</label>
+                                    <input type="email" name="email" id="Email" placeholder="Ingrese email" />
+                                </div>
+                                
+                                <div>
+                                    <span id="inputEmail" style="display:none;">*Formato no válido</span>
+                                </div>
+                                
+                            </div >
+                            <div class="group">
+                                <div>
+                                    <label for="Contrasenia2">Contraseña</label>
+                                    <input type="password" name="contrasenia2" id="Contrasenia2" placeholder="********" />
+                                </div>
+                                
+                                <div>
+                                    <span id="inputContrasenia2" style="display:none;">*Las contraseñas no son iguales</span>
+                                </div>
+
+                            </div>
+                            <div class="group">
+                                <div>
+                                    <label for="Dni">DNI</label>
+                                    <input type="text" name="dni" id="Dni" placeholder="Ingrese DNI" />
+                                </div>
+                                <div>                                
+                                    <span id="inputDni" style="display:none;">*Debe tener entre 7 y 8 dígitos numéricos</span>
+                                </div>
+                            </div>
+                            <div class="group">
+                                <div>
+                                    <label for="Direccion">Dirección</label>
+                                    <input type="text" name="direccion" id="Direccion" placeholder="Ingrese Dirección" />
+                                </div>
+                                
+                                <div>
+                                    <span id="inputDireccion" style="display:none;">*Debe tener al menos 5 caracteres, con número, letras y un espacio entre medio</span>
+                                </div>
+                                
+                            </div>
+                            <div class="group">
+                                <div>
+                                    <label for="Cpostal">Código Postal</label>
+                                    <input type="text" name="cPostal" id="Cpostal" placeholder="Ingrese Código Postal" />
+                                </div>
+                                
+                                <div>
+                                    <span id="inputCpostal" style="display:none;">*Debe tener al menos 3 caracteres</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boton">                       
+                         <button id="boton" type="button">Enviar</button>
+                    </div>
+
+                    </form>
+                </article>
+            </section>
+
+        </main>
+
+        <footer>
+            <p class="p1">Edición Nº 1</p>
+            <div>
+                <p class="p2">Directora: Valentina Contrera - San Nicolás de los Arroyos</p>
+                <p class="pGuion"> - </p>
+                <p class="p2">Todos los derechos reservados</p>
+
+            </div>
+        </footer>
+    <!-- </div> -->
+<script src="script.js"></script>
+</body>
+
+</html>
