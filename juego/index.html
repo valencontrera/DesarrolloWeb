@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Simón dice</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- <div class="contenedor"> -->
+        <header class="header">
+            <div class="cabecera">
+                <h1 id="titulo">Simón dice</h1>
+            </div>       
+        </header>
+
+        <main>
+            <section>
+                <article>
+                    <div class="contenedorPrincipal">
+                        <div class="nivelYpuntos">
+                            <h2 id="nivel">Nivel</h2>
+                            <div id="comboPuntos"><span class="tituloPuntos">Puntaje: </span><span id="puntaje"></span></div>
+                        </div>
+                        <div><span class="tituloPuntosMax">Puntaje máximo: </span><span id="puntajeMax"></span></div>
+                    </div>
+
+                    <div class="contenedorColor">
+                        <div class="contenedorColores">
+                            <div id="r" onclick="clickSimon('r')"></div>
+                            <div id="v" onclick="clickSimon('v')"></div>
+                        </div>
+                        
+                        <div class="contenedorColores">
+                            <div id="am" onclick="clickSimon('am')"></div>
+                            <div id="az" onclick="clickSimon('az')"></div>
+                        </div>
+                    </div>
+                    <div class="contenedorBotones">
+                        <button id="comenzarJuego" class="botones" onclick="comenzarJuego()">Jugar</button>
+                        <button id="reiniciarJuego" class="botones" onclick="reiniciarJuego()">Reiniciar</button>
+                    </div>
+                 </article>
+            </section>
+            <!-- <aside>            
+                <div>
+                    <h2>Información</h2>
+                    <p>Reglas:</p>
+                    <ul>
+                        <li>
+                            <p>Debe presionar 'Jugar', allí el simon comenzara a</p>
+                        </li>
+                    </ul>
+                </div>     
+            </aside> -->
+        </main>
+        <script src="./script.js"></script>
+</body>
+
+</html>
