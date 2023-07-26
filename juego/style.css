@@ -245,7 +245,6 @@ aside div{
   
     main{
         display: block;
-        height: 100vh;
     }
 
     section{
@@ -264,9 +263,9 @@ aside div{
     } */
 
     article{
-        max-width: 100%;
+        /* max-width: 100%;
         margin: 0px 0px 5px 0px;
-        padding: 10px 8px;
+        padding: 10px 8px; */
         justify-content: space-between;
     }
     
@@ -295,10 +294,10 @@ aside div{
     }
 
     .botones {
-        width:60px;
-        height: 20px;
-        font-weight:500;
+        width:70px;
+        height: 25px;
+        font-weight:700;
         padding: 3px;
-        font-size: 12px;
+        font-size: 15px;
     }
 }
