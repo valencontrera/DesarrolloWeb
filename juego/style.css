@@ -1,7 +1,3 @@
-h1{
-    font-family: system-ui;
-}
-
 .header{
     width: 100%;
 }
@@ -17,6 +13,7 @@ h1{
 }
 
 h1{
+    font-family: system-ui;
     font-weight: bold;
     font-size: 40px;
 }
@@ -37,13 +34,17 @@ section{
     flex-direction: column;
     align-items: center;
     width: 100vw;
+    height: 100%;
+
 }
 
 article{
     width: 100%;
+    height: 100%;
     /* justify-content: center; */
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .contenedorPrincipal{
@@ -54,7 +55,6 @@ article{
 }
 
 h2{
-    text-align: center;
     font-weight:900;
     font-size: 30px;
 }
@@ -89,8 +89,8 @@ h2{
 }
 
 .contenedorColor{
-    width:35vw; 
-    height: 70vh;
+    width:620px; 
+    height: 620px;
     margin: auto;
     display: flex; 
     flex-direction: column;
@@ -106,7 +106,6 @@ h2{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 
@@ -173,12 +172,6 @@ h2{
     background-color:#030381;
     border-radius: 0 0 100% 0;
 }
-/* section h1{
-    font-weight: 900;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    margin: 0px 0px 9px 0px;
-    font-size: 30px;
-} */
 
 /* aside{
     background-color: rgb(0 55 255 / 51%);
@@ -197,43 +190,57 @@ aside div{
     }
 
     h1{
-        padding-bottom: 6px;
         font-size: 30px;
-        padding-top:0px;
     }
 
-    section{
+    /* section{
         width: 100%;
-    }
+    } */
 
     /* aside{
         display: none;
     } */
-    main{
-        display: block;
-        height: 100vh;
+   
+    article{
+        justify-content: flex-start;
+    }
+    .contenedorColor{
+        width:450px; 
+        height: 450px;
+    }
+
+    h2{
+        font-weight:900;
+        font-size: 24px;
+    }
+
+    .tituloPuntos, #puntaje{
+        font-weight:700;
+        font-size: 18px;
+    }
+
+    .tituloPuntosMax, #puntajeMax{
+        font-weight:900;
+        font-size: 17px;
+    }
+
+    .botones {
+        width:70px;
+        height: 25px;
+        font-weight:700;
+        padding: 3px;
+        font-size: 15px;
     }
 }
 
-@media (max-width: 490px) {
-    main{
-        display: block;
-        height: 100vh;
-    }
-}
-
-
-@media (max-width: 400px) {
+@media (max-width: 480px) {
 
     .cabecera{
         padding: 6px;
     }
 
     h1{
-        margin-top:5px;
-        padding-bottom: 5px;
         font-size: 25px;
-        padding-top:0px;
     }
   
     main{
@@ -251,20 +258,47 @@ aside div{
         display: none;
     } */
 
-    section h1{
+    /* section h1{
         margin: 9px 0px 12px 0px;
         font-size: 20px;
-    }
+    } */
 
     article{
         max-width: 100%;
         margin: 0px 0px 5px 0px;
         padding: 10px 8px;
-        
+        justify-content: space-between;
     }
     
-    article{
-        display: block;
+    .contenedorPrincipal{
+        margin-bottom: 30px;
     }
 
+    h2{
+        font-weight:900;
+        font-size: 20px;
+    }
+
+    .tituloPuntos, #puntaje{
+        font-weight:700;
+        font-size: 16px;
+    }
+
+    .tituloPuntosMax, #puntajeMax{
+        font-weight:900;
+        font-size: 16px;
+    }
+
+    .contenedorColor{
+        width:350px; 
+        height: 350px;
+    }
+
+    .botones {
+        width:60px;
+        height: 20px;
+        font-weight:500;
+        padding: 3px;
+        font-size: 12px;
+    }
 }
