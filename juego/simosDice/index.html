@@ -6,12 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Simón dice</title>
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- <div class="contenedor"> -->
         <header class="header">
             <div class="cabecera">
                 <h1 id="titulo">Simón dice</h1>
@@ -42,23 +41,33 @@
                             </div>
                         </div>
                     </div>
-                    <div class="contenedorBotones">
+                    <div id="contenedorBotones">
                         <button id="comenzarJuego" class="botones" onclick="comenzarJuego()">Jugar</button>
                         <button id="reiniciarJuego" class="botones" onclick="reiniciarJuego()">Reiniciar</button>
                     </div>
+                    <div id="contenedorNombre">
+                        <form action="#" id="formulario">
+                            <div class="contenedorForm"> 
+                                <div class="form">
+                                    <label for="nombre">Ingrese nombre del jugador</label>
+                                    <input type="text" name="nombre" id="nombre"/>
+                                </div>
+                                <div class="span">
+                                    <span id="inputnombre">*Debe tener 3 o más letras</span>
+                                </div>
+                            </div>
+                            <div class="boton">                       
+                                <button id="enviar"type="button">Jugar</button>
+                           </div>
+                        </form>
+                    </div>
+                    <div class="contenedorContacto">
+                        <img src="../contacto.png" class="iconoEmail">
+                        <a href="../formulario/form.html" target="_blank">Contáctenos</a>
+                      </div>
                  </article>
             </section>
-            <!-- <aside>            
-                <div>
-                    <h2>Información</h2>
-                    <p>Reglas:</p>
-                    <ul>
-                        <li>
-                            <p>Debe presionar 'Jugar', allí el simon comenzara a</p>
-                        </li>
-                    </ul>
-                </div>     
-            </aside> -->
+            
         </main>
         <script src="./script.js"></script>
 </body>

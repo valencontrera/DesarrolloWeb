@@ -18,10 +18,16 @@ const verde = document.getElementById('v');
 const azul = document.getElementById('az');
 const amarillo = document.getElementById('am');
 const rojo = document.getElementById('r');
-var timerPrender = 2000;
-var timerApagar = 2500;
+var timerPrender = 1800;
+var timerApagar = 2050;
 var turnoJugador=false;
 var guardadoViejo = false;
+const soloLetras = /^[a-zA-Z ]+$/; //(con esta expresión se aceptan únicamente las letras del alfabeto, mayúsculas y minúsculas). /[A-Za-z]/
+const nombre = document.getElementById('nombre');
+const contenedorForm = document.getElementById('contenedorNombre')
+const contenedorBotones = document.getElementById('contenedorBotones')
+const botonEnviar = document.getElementById('enviar')
+var nombreJugador = ""
 
 var load = function (reiniciar) 
 {
@@ -33,8 +39,9 @@ var load = function (reiniciar)
     botonReiniciarJuego.disabled = true;
     botonComenzarJuego.disabled = false;
     tituloPrinContar = 3
-    timerPrender = 2000;
-    timerApagar = 2500;
+    timerPrender = 1800;
+    timerApagar = 2050;
+    nombreJugador = localStorage.getItem('nombreJugador')!="" ? localStorage.getItem('nombreJugador') : ""
 
     if(reiniciar)
     {
@@ -43,19 +50,34 @@ var load = function (reiniciar)
         nivel.style.display='none';
         localStorage.removeItem('puntaje');
         localStorage.removeItem('nivel');
+        localStorage.removeItem('velocidad');
+        localStorage.removeItem('secuencia');
+        localStorage.removeItem('nombreJugador');
+        nombre.value =""
         puntaje = 0;
         puntajeComponente.textContent = puntaje.toString();
+        contenedorForm.style.display="flex";
+        contenedorBotones.style.display="none";
+        botonEnviar.disabled = true;
     }
     else 
     {
-        if((localStorage.getItem('nivel') != null && localStorage.getItem('nivel') != undefined && localStorage.getItem('nivel')>1) && (localStorage.getItem('puntaje') != null && localStorage.getItem('puntaje') != undefined && localStorage.getItem('puntaje')>0)  )
+        if((localStorage.getItem('nivel') != null && localStorage.getItem('nivel') != undefined && localStorage.getItem('nivel')>1) 
+        && (localStorage.getItem('puntaje') != null && localStorage.getItem('puntaje') != undefined )
+        && (localStorage.getItem('velocidad') != null && localStorage.getItem('velocidad') != undefined )
+        && (localStorage.getItem('secuencia') != null && localStorage.getItem('secuencia') != undefined )  
+        && (localStorage.getItem('nombreJugador') != null && localStorage.getItem('nombreJugador') !=undefined))
         {   
-            guardadoViejo=true;
+            // guardadoViejo=true;
             nivelNum = parseInt(localStorage.getItem('nivel'));
             nivel.textContent = nivelTitulo + ' ' + nivelNum.toString();
             puntaje = localStorage.getItem('puntaje') != null && localStorage.getItem('puntaje') != undefined ? parseInt(localStorage.getItem('puntaje')) : 0;
             puntajeComponente.textContent = puntaje.toString();
             botonReiniciarJuego.disabled = false;
+            timerPrender = parseInt(localStorage.getItem('velocidad'))
+            timerApagar = timerPrender + 250
+            secuenciaSistema = JSON.parse(localStorage.getItem('secuencia'))
+            
         }
         else 
         {
@@ -63,9 +85,23 @@ var load = function (reiniciar)
             comboPuntaje.style.display='none';
             nivel.style.display='none';
             localStorage.removeItem('puntaje');
+            localStorage.removeItem('nivel');
+            localStorage.removeItem('velocidad');
+            localStorage.removeItem('secuencia');
             puntaje = 0;
             puntajeComponente.textContent = puntaje.toString();
 
+            if(nombreJugador!="" && nombreJugador!=null && nombreJugador!=undefined)
+            {
+                contenedorForm.style.display="none";
+                contenedorBotones.style.display="flex";
+            }
+            else {
+                contenedorForm.style.display="flex";
+                contenedorBotones.style.display="none";
+            }
+            botonEnviar.disabled = true;
+            
         }
 
     }
@@ -130,19 +166,19 @@ var apagarLuces = function (color)
 
 var setearSecuencia = function () 
 {
-    if(guardadoViejo)
-    {
-        for (let i = 0; i < nivelNum; i++) {
-            indiceColor = Math.floor(Math.random() * 4);
-            secuenciaSistema.push(colores[indiceColor]);        
-        }
-        guardadoViejo=false;
-    }
-    else 
-    {
+    // if(guardadoViejo)
+    // {
+    //     for (let i = 0; i < nivelNum; i++) {
+    //         indiceColor = Math.floor(Math.random() * 4);
+    //         secuenciaSistema.push(colores[indiceColor]);        
+    //     }
+    //     guardadoViejo=false;
+    // }
+    // else 
+    // {
         indiceColor = Math.floor(Math.random() * 4);
         secuenciaSistema.push(colores[indiceColor]);        
-    }
+    // }
        
     
 }
@@ -157,14 +193,13 @@ var cambioNivel = function (){
     if((timerPrender-100) > 100)
     {
         timerPrender = timerPrender - 100;
-        timerApagar = timerPrender + 500
+        timerApagar = timerPrender + 250
     }
     mostrarSecuencia()
 }
 
 var clickSimon = function (color) 
 {
-    
     if(turnoJugador)
     {
         var sumaPunto= false;
@@ -197,6 +232,8 @@ var clickSimon = function (color)
                     turnoJugador=false
                     localStorage.setItem('puntaje', puntaje)
                     localStorage.setItem('nivel', nivelNum+1)
+                    localStorage.setItem('secuencia',  JSON.stringify(secuenciaSistema))
+                    localStorage.setItem('velocidad', timerPrender)
                     setTimeout(cambioNivel, 1500);
                     
                 }
@@ -232,7 +269,16 @@ var mostrarSecuencia = function (){
 
     setTimeout(()=>{
         tituloPrin.textContent=tituloPrinTexto;
-        setearSecuencia(nivelNum);
+
+        // if(!guardadoViejo)
+        // {
+            setearSecuencia(nivelNum);
+        // }
+        // else 
+        // {
+        //     guardadoViejo=false
+        // }
+
         for (let i = 0; i < secuenciaSistema.length; i++) {
             setTimeout(() => {
                 prenderLuces(secuenciaSistema[i]);
@@ -240,7 +286,7 @@ var mostrarSecuencia = function (){
                     apagarLuces(secuenciaSistema[i]);
                     if(i == secuenciaSistema.length-1)
                     {
-                        tituloPrin.textContent='Tu turno';
+                        tituloPrin.textContent='Tu turno' + ' ' + nombreJugador;
                         botonReiniciarJuego.disabled = false;
                         turnoJugador=true;
                     }
@@ -255,7 +301,7 @@ var mostrarSecuencia = function (){
 var comenzarJuego = function ()
 {
     turnoJugador=false;
-    botonReiniciarJuego.disabled = false;
+    botonReiniciarJuego.disabled = true;
     botonComenzarJuego.disabled = true;
 
     if(nivelNum == 0)
@@ -266,12 +312,13 @@ var comenzarJuego = function ()
         comboPuntaje.style.display='block';
     }
     
-    setTimeout(cuentaRegresiva,1500)
-    setTimeout(cuentaRegresiva,3000)
+    setTimeout(cuentaRegresiva,1000)
+    setTimeout(cuentaRegresiva,2000)
     setTimeout(() => {
         cuentaRegresiva()
+        botonReiniciarJuego.disabled = false;
         mostrarSecuencia()
-    }, 4500);
+    }, 3000);
 
     
 }
@@ -281,5 +328,65 @@ var reiniciarJuego = function ()
     load(true)
 }
 
+var corregir = function (e)
+{ 
+    var result = false;
+   
+    var dat = nombre.value;
+    if(dat.length != 0 && !(dat.length > 2  && soloLetras.test(dat)))
+    {
+        result = true;
+    }
+
+    return result;
+
+}
+
+var habilitarSpan = function (idInput){
+    var span = document.getElementById('input'+idInput);
+    span.style.display = 'block';
+    botonEnviar.style.marginTop="4px";
+    nombre.style.border = '2px solid orangered';
+}
+
+var verErrores = function (e)
+{ 
+    var result = corregir(e.srcElement.id);
+    if (result)
+    {
+        habilitarSpan(e.srcElement.id);
+    }
+}
+
+var deshabilitarSpan = function (){
+    var span = document.getElementById('inputnombre');
+    span.style.display = 'none';
+    nombre.style.border = '2px solid rgb(47 7 212 / 78%)';
+    botonEnviar.style.marginTop="17px";
+       
+}
+
+var habiltiarBoton = function (){
+    if(nombre.value.length>2)
+    {
+        botonEnviar.disabled = false;
+    }
+    else 
+    {
+        botonEnviar.disabled = true;
+    }
+}
+
+var jugar = function(){
+    nombreJugador = nombre.value
+    localStorage.setItem('nombreJugador', nombreJugador)
+    contenedorForm.style.display="none";
+    contenedorBotones.style.display="flex";
+    comenzarJuego()
+}
 
 window.addEventListener('load', load(false));
+nombre.addEventListener('focus', deshabilitarSpan);
+nombre.addEventListener('blur', verErrores);
+nombre.addEventListener('keyup', habiltiarBoton);
+botonEnviar.addEventListener('click', jugar);

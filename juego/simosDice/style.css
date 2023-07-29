@@ -1,5 +1,10 @@
+body{
+    height: 100vh;
+}
+
 .header{
     width: 100%;
+    height: 6%;
 }
 
 .cabecera{
@@ -8,20 +13,20 @@
     color: white;
     flex-direction: column;
     text-align: center; 
-    padding: 15px;
+    padding: 7px;
 
 }
 
 h1{
     font-family: system-ui;
     font-weight: bold;
-    font-size: 40px;
+    font-size:30px;
 }
 
 main{
     display: flex;
     flex-direction: row;
-    height: 85vh;
+    height: 93%;
 }
 
 section, main, body{
@@ -29,7 +34,7 @@ section, main, body{
 }
 
 section{
-    padding: 10px;
+    padding: 4px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,19 +49,19 @@ article{
     /* justify-content: center; */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .contenedorPrincipal{
     display: flex;
     justify-content: space-between;
-    margin: 10px;
+    margin: 5px;
     flex-wrap: wrap;
 }
 
 h2{
     font-weight:900;
-    font-size: 30px;
+    font-size: 26px;
 }
 
 #comboPuntos{
@@ -89,8 +94,8 @@ h2{
 }
 
 .contenedorColor{
-    width:620px; 
-    height: 620px;
+    width:480px; 
+    height: 480px;
     margin: auto;
     display: flex; 
     flex-direction: column;
@@ -101,7 +106,7 @@ h2{
     width: 100%;
     height: 100%;
 }
-.contenedorBotones{
+#contenedorBotones{
     margin-top: 15px;
     display: flex;
     justify-content: center;
@@ -121,7 +126,7 @@ h2{
     border: none;
 }
 
-#comenzarJuego{
+#comenzarJuego, #enviar{
     background-color: rgb(47 7 212 / 78%);
 }
 
@@ -129,11 +134,11 @@ h2{
     background-color: orangered;
 }
 
-#comenzarJuego:hover, #reiniciarJuego:hover{
+#comenzarJuego:hover, #reiniciarJuego:hover, #enviar:hover{
     box-shadow: inset 0px 0px 6px 2px rgb(255 255 255 / 54%);
 }
 
-#comenzarJuego:disabled{
+#comenzarJuego:disabled, #enviar:disabled{
     cursor: auto;
     background-color: rgba(48, 7, 212, 0.582);
     color: #b3b3b3;
@@ -183,14 +188,111 @@ aside div{
     display: flex; 
     flex-direction: column;
 } */
+#contenedorNombre{
+    display: none;
+    justify-content: center;
+    width:100%;
+    margin-top:20px;
+}
+
+form, .form, .contenedorForm{
+    display: flex;
+    flex-direction: column;
+}
+
+form{
+    width: 250px;
+    align-items: center;
+}
+
+.form, .contenedorForm{
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* .form {
+    margin-bottom: 8px;
+} */
+ 
+.form label{
+    margin-bottom: 4px;
+    font-family: system-ui;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#nombre{
+    font-family: system-ui;
+    padding: 4px;
+    width: 100%;    
+    border: 2px solid rgb(47 7 212 / 78%);
+    border-radius: 5px;
+}
+
+#enviar{
+    height: 30px;
+    font-weight:700;
+    padding: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    margin-bottom: 5px;
+    margin-top: 17px;
+    border-radius: 5px;
+    width: 90px;
+}
+
+.span{
+    margin-top: 5px;
+    /* margin-bottom: 0px; */
+}
+
+#inputnombre{
+    color: orangered;
+    font-size: small;
+    display: none;
+
+}
+
+.iconoEmail{
+    width: 18px;
+}
+
+.contenedorContacto{
+padding-bottom: 7px;    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.iconoEmail{
+    margin-right: 5px;
+}
+
+.contenedorContacto a{
+    color:rgb(47 7 212 / 78%);
+    font-size: 14px;
+    font-weight: 700;
+    font-family: system-ui;
+}
 
 @media (max-width: 768px) {
+
+    .header{
+        height: 6%;
+    }
+
+    main{
+        height: 94%;
+    }
+
     .cabecera{
-        padding: 10px;
+        padding: 5px;
     }
 
     h1{
-        font-size: 30px;
+        font-size: 25px;
     }
 
     /* section{
@@ -231,24 +333,40 @@ aside div{
         padding: 3px;
         font-size: 15px;
     }
+
+    .form label{
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    #enviar{
+        width: 70px;
+        height: 25px;
+        font-size: 14px;
+    }
+    
 }
 
 @media (max-width: 480px) {
 
+    
+    .header{
+        height: 5%;
+    }
+
+    main{
+        height: 95%;
+    }
     .cabecera{
         padding: 6px;
     }
 
     h1{
-        font-size: 25px;
-    }
-  
-    main{
-        display: block;
+        font-size: 20px;
     }
 
     section{
-        padding: 8px;
+        padding: 2px;
         width: 100%;
 
     }
@@ -298,6 +416,38 @@ aside div{
         height: 25px;
         font-weight:700;
         padding: 3px;
-        font-size: 15px;
+        font-size: 12px;
+    }
+
+    .form label{
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    #enviar{
+        width: 70px;
+        height: 25px;
+        font-size: 12px;
+    }
+    
+    #inputnombre{
+        font-size: x-small;   
+    }
+
+    form{
+        width: 200px;
+    }
+
+    .contenedorContacto{
+        margin-left: 7px;    
+    }
+
+    .iconoEmail{
+        width: 13px;
+        margin-right: 3px;
+    }
+    
+    .contenedorContacto a{
+        font-size: 13px;
     }
 }
