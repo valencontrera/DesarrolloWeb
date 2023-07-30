@@ -1,3 +1,4 @@
+//declaracion de variables
 const tituloPrin = document.getElementById('titulo');
 var tituloPrinTexto = "Simón dice"
 var tituloPrinContar = 3
@@ -22,13 +23,15 @@ var timerPrender = 1800;
 var timerApagar = 2050;
 var turnoJugador=false;
 var guardadoViejo = false;
-const soloLetras = /^[a-zA-Z ]+$/; //(con esta expresión se aceptan únicamente las letras del alfabeto, mayúsculas y minúsculas). /[A-Za-z]/
+const soloLetras = /^[a-zA-Z ]+$/; //con esta expresión se aceptan únicamente las letras del alfabeto, mayúsculas y minúsculas
 const nombre = document.getElementById('nombre');
 const contenedorForm = document.getElementById('contenedorNombre')
 const contenedorBotones = document.getElementById('contenedorBotones')
 const botonEnviar = document.getElementById('enviar')
 var nombreJugador = ""
 
+
+//metodo que se ejecuta al cargar o recargar la pagina, precarga los datos del localstorage, resetea todas las variables y configura ciertas otras
 var load = function (reiniciar) 
 {
     secuenciaClick=[]
@@ -108,6 +111,8 @@ var load = function (reiniciar)
     
 }
 
+
+//pone el color del triangulo más claro, asi simula una luz
 var prenderLuces = function (color) 
 {
     switch (color) {
@@ -136,6 +141,8 @@ var prenderLuces = function (color)
     }
 }
 
+
+//pone el color del triangulo más oscuro, asi simula que se apaga la luz
 var apagarLuces = function (color) 
 {
     switch (color) {
@@ -164,25 +171,16 @@ var apagarLuces = function (color)
     }
 }
 
+
+//inserta un color aleatorio a la secuencia
 var setearSecuencia = function () 
 {
-    // if(guardadoViejo)
-    // {
-    //     for (let i = 0; i < nivelNum; i++) {
-    //         indiceColor = Math.floor(Math.random() * 4);
-    //         secuenciaSistema.push(colores[indiceColor]);        
-    //     }
-    //     guardadoViejo=false;
-    // }
-    // else 
-    // {
-        indiceColor = Math.floor(Math.random() * 4);
-        secuenciaSistema.push(colores[indiceColor]);        
-    // }
-       
-    
+    indiceColor = Math.floor(Math.random() * 4);
+    secuenciaSistema.push(colores[indiceColor]);         
 }
 
+
+//incrementa el nivel en uno, acelera la velocidad de prender y apagar
 var cambioNivel = function (){
 
     tituloPrin.textContent=tituloPrinTexto;
@@ -198,6 +196,8 @@ var cambioNivel = function (){
     mostrarSecuencia()
 }
 
+
+//toma el evento del jugador, hace las validaciones correspondientes para luego incrementar el nivel, gurdar en el localstorage o mostrar cartel de perdida
 var clickSimon = function (color) 
 {
     if(turnoJugador)
@@ -247,7 +247,7 @@ var clickSimon = function (color)
             }
             else 
             {
-                alert('Fallaste, vuelve a comenzar de 0')
+                alert('Fallaste, vuelve a comenzar de cero')
                 load(true)
             }
             turnoJugador=true;
@@ -256,12 +256,15 @@ var clickSimon = function (color)
     }
 }
 
+//metodo para realizar el '3 2 1' al comenzar a jugar
 var cuentaRegresiva = function ()
 {
     tituloPrin.textContent=tituloPrinTexto + ' ' + tituloPrinContar.toString();
     tituloPrinContar--;
 }
 
+
+//ejecuta los metodos prender y apagar de las luces
 var mostrarSecuencia = function (){
 
     botonReiniciarJuego.disabled = true;
@@ -298,6 +301,7 @@ var mostrarSecuencia = function (){
 }
 
 
+//metodo que se ejcuta al presionar jugar, ejecuta los metodos para el '3 2 1' y el metodo que prende y apaga las luces
 var comenzarJuego = function ()
 {
     turnoJugador=false;
@@ -323,11 +327,15 @@ var comenzarJuego = function ()
     
 }
 
+
+//reinicia todas las variables y comienza de cero el juego
 var reiniciarJuego = function ()
 {
     load(true)
 }
 
+
+//metodo que chequea que se complete con letras el nombre del jugador
 var corregir = function (e)
 { 
     var result = false;
@@ -342,6 +350,8 @@ var corregir = function (e)
 
 }
 
+
+//metodo que muestra el error debajo del input del formulario
 var habilitarSpan = function (idInput){
     var span = document.getElementById('input'+idInput);
     span.style.display = 'block';
@@ -349,6 +359,8 @@ var habilitarSpan = function (idInput){
     nombre.style.border = '2px solid orangered';
 }
 
+
+//metodo que llama al corregir par ver si hay error y luego llama el metodo que habilita el error 
 var verErrores = function (e)
 { 
     var result = corregir(e.srcElement.id);
@@ -358,6 +370,8 @@ var verErrores = function (e)
     }
 }
 
+
+//metodo que desaparece el error debajo del input del formulario
 var deshabilitarSpan = function (){
     var span = document.getElementById('inputnombre');
     span.style.display = 'none';
@@ -366,6 +380,8 @@ var deshabilitarSpan = function (){
        
 }
 
+
+//metodo que habilita el boton jugar del formulario solo si esta completo y correcto el nommbre del jugador
 var habiltiarBoton = function (){
     if(nombre.value.length>2)
     {
@@ -377,6 +393,8 @@ var habiltiarBoton = function (){
     }
 }
 
+
+//metodo que se ejecuta al presionar jugar luego de completar el formulario
 var jugar = function(){
     nombreJugador = nombre.value
     localStorage.setItem('nombreJugador', nombreJugador)
@@ -385,6 +403,8 @@ var jugar = function(){
     comenzarJuego()
 }
 
+
+//eventos
 window.addEventListener('load', load(false));
 nombre.addEventListener('focus', deshabilitarSpan);
 nombre.addEventListener('blur', verErrores);

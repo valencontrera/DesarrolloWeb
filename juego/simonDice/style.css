@@ -4,7 +4,7 @@ body{
 
 .header{
     width: 100%;
-    height: 6%;
+    height: 7%;
 }
 
 .cabecera{
@@ -13,7 +13,7 @@ body{
     color: white;
     flex-direction: column;
     text-align: center; 
-    padding: 7px;
+    padding: 5px;
 
 }
 
@@ -108,6 +108,7 @@ h2{
 }
 #contenedorBotones{
     margin-top: 15px;
+    margin-bottom: 15px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -260,10 +261,14 @@ form{
 }
 
 .contenedorContacto{
-padding-bottom: 7px;    margin-left: 10px;
+    /* padding-bottom: 7px;  */  
+    /* margin-left: 10px;  */
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
+    position:absolute;
+    left: 1%;
+    bottom: 1%;
 }
 
 .iconoEmail{
@@ -294,14 +299,6 @@ padding-bottom: 7px;    margin-left: 10px;
     h1{
         font-size: 25px;
     }
-
-    /* section{
-        width: 100%;
-    } */
-
-    /* aside{
-        display: none;
-    } */
    
     article{
         justify-content: flex-start;
@@ -371,19 +368,7 @@ padding-bottom: 7px;    margin-left: 10px;
 
     }
 
-    /* aside{
-        display: none;
-    } */
-
-    /* section h1{
-        margin: 9px 0px 12px 0px;
-        font-size: 20px;
-    } */
-
     article{
-        /* max-width: 100%;
-        margin: 0px 0px 5px 0px;
-        padding: 10px 8px; */
         justify-content: space-between;
     }
     

@@ -14,7 +14,7 @@
     <!-- <div class="contenedor"> -->
         <header class="header">
             <div class="cabecera">
-                <h1 id="titulo">Contacto</h1>
+                <h1>Contacto</h1>
             </div>       
         </header>
           
@@ -34,15 +34,7 @@
                                   <span id="inputNombre" style="display:none;">*Debe tener 6 o más letras y un espacio en medio</span>
                                 </div>
                             </div>
-                            <div class="group"> 
-                                <div>
-                                    <label for="Contrasenia">Contraseña</label>
-                                    <input type="password" name="contrasenia" id="Contrasenia" placeholder="********" />
-                               </div>
-                                <div>
-                                    <span id="inputContrasenia" style="display:none;">*Debe tener 8 o más caracteres, con letras y números</span>
-                                </div>
-                            </div>
+                           
                             <div class="group">
                                 <div>
                                     <label for="Edad">Edad</label>
@@ -63,17 +55,6 @@
                                     <span id="inputTelefono" style="display:none;">*Debe 7 o más dígitos numéricos y no tener espacio, guiones ni paréntesis</span>
                                 </div>
                             </div>
-                            <div class="group">
-                                <div>
-                                    <label for="Ciudad">Ciudad</label>
-                                    <input type="text" name="ciudad" id="Ciudad" placeholder="Ingrese Ciudad"/>
-                                </div>
-                           
-                                <div>
-                                    <span id="inputCiudad" style="display:none;">*Debe tener al menos 3 caracteres</span>
-                                </div>
-                            </div>
-                            
                         </div>
 
                         <div class="col2">
@@ -87,18 +68,8 @@
                                     <span id="inputEmail" style="display:none;">*Formato no válido</span>
                                 </div>
                                 
-                            </div >
-                            <div class="group">
-                                <div>
-                                    <label for="Contrasenia2">Contraseña</label>
-                                    <input type="password" name="contrasenia2" id="Contrasenia2" placeholder="********" />
-                                </div>
-                                
-                                <div>
-                                    <span id="inputContrasenia2" style="display:none;">*Las contraseñas no son iguales</span>
-                                </div>
-
                             </div>
+                        
                             <div class="group">
                                 <div>
                                     <label for="Dni">DNI</label>
@@ -119,21 +90,19 @@
                                 </div>
                                 
                             </div>
-                            <div class="group">
-                                <div>
-                                    <label for="Cpostal">Código Postal</label>
-                                    <input type="text" name="cPostal" id="Cpostal" placeholder="Ingrese Código Postal" />
-                                </div>
-                                
-                                <div>
-                                    <span id="inputCpostal" style="display:none;">*Debe tener al menos 3 caracteres</span>
-                                </div>
-                                
-                            </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="rowGroup">
+                            <div>
+                                <label for="Comentario">Comentario</label>
+                                <textarea name="comentario" id="Comentario" cols="25" rows="5" placeholder="Ingrese su comentario"></textarea>
+                            </div>               
+                        </div>
+                    </div>
+                    
                     <div class="boton">                       
-                         <button id="boton" type="button">Enviar</button>
+                         <button id="boton" type="submit">Enviar</button>
                     </div>
 
                     </form>
