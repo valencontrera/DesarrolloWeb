@@ -256,13 +256,7 @@ form{
 
 }
 
-.iconoEmail{
-    width: 18px;
-}
-
 .contenedorContacto{
-    /* padding-bottom: 7px;  */  
-    /* margin-left: 10px;  */
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
@@ -271,11 +265,21 @@ form{
     bottom: 1%;
 }
 
-.iconoEmail{
-    margin-right: 5px;
+.contenedorContacto2{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    position:absolute;
+    right: 1%;
+    bottom: 1%;
 }
 
-.contenedorContacto a{
+.iconoEmail, .iconoGit{
+    margin-right: 5px;
+    width: 18px;
+}
+
+.contenedorContacto a, .contenedorContacto2 a{
     color:rgb(47 7 212 / 78%);
     font-size: 14px;
     font-weight: 700;
@@ -423,16 +427,16 @@ form{
         width: 200px;
     }
 
-    .contenedorContacto{
+    .contenedorContacto, .contenedorContacto2{
         margin-left: 7px;    
     }
 
-    .iconoEmail{
+    .iconoEmail, .iconoGit{
         width: 13px;
         margin-right: 3px;
     }
     
-    .contenedorContacto a{
+    .contenedorContacto a, .contenedorContacto2 a{
         font-size: 13px;
     }
 }
