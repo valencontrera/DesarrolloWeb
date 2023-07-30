@@ -56,6 +56,7 @@ var load = function (reiniciar)
         localStorage.removeItem('velocidad');
         localStorage.removeItem('secuencia');
         localStorage.removeItem('nombreJugador');
+        localStorage.removeItem('fecha');
         nombre.value =""
         puntaje = 0;
         puntajeComponente.textContent = puntaje.toString();
@@ -91,6 +92,7 @@ var load = function (reiniciar)
             localStorage.removeItem('nivel');
             localStorage.removeItem('velocidad');
             localStorage.removeItem('secuencia');
+            localStorage.removeItem('fecha');
             puntaje = 0;
             puntajeComponente.textContent = puntaje.toString();
 
@@ -234,6 +236,7 @@ var clickSimon = function (color)
                     localStorage.setItem('nivel', nivelNum+1)
                     localStorage.setItem('secuencia',  JSON.stringify(secuenciaSistema))
                     localStorage.setItem('velocidad', timerPrender)
+                    localStorage.setItem('fecha', new Date(Date.now()))
                     setTimeout(cambioNivel, 1500);
                     
                 }
