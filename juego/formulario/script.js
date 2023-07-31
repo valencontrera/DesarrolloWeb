@@ -1,6 +1,7 @@
 //declaracion de variables
 const soloLetras = /^[a-zA-Z ]+$/; //(con esta expresión se aceptan únicamente las letras del alfabeto, mayúsculas y minúsculas). /[A-Za-z]/
-const numyLetras = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9\s]+$/;
+const numyLetrasSioSi = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9\s]+$/;
+const numYletras = /^(?=.*[a-zA-Z0-9]).*$/;
 const soloNumeros = /^[0-9]+$/;
 const mail = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-Z0-9]{2,4}$/;
 const nombre = document.getElementById('Nombre');
@@ -23,7 +24,7 @@ var corregir = function (e)
     switch (e) {
         case 'Nombre':
             dat = nombre.value;
-            if((dat.length != 0 && !(dat.length > 5 && (dat.indexOf(' '))!= -1 && soloLetras.test(dat))) || dat.length == 0)
+            if((dat.length != 0 && !(dat.length > 0 && numYletras.test(dat))) || dat.length == 0)
             {
                 result = true;
             }
@@ -39,7 +40,7 @@ var corregir = function (e)
 
         case 'Direccion':
             dat = direccion.value;
-            if((dat.length != 0 && !(dat.length > 4 && (dat.indexOf(' '))!= -1 && numyLetras.test(dat))) || dat.length == 0)
+            if((dat.length != 0 && !(dat.length > 4 && (dat.indexOf(' '))!= -1 && numyLetrasSioSi.test(dat))) || dat.length == 0)
             {
                 result = true;
             }
@@ -70,7 +71,7 @@ var corregir = function (e)
             break;
         case 'Comentario':
             dat = comentario.value;
-            if(dat.length == 0)
+            if(dat.length == 0 || (dat.length !=0 && !(dat.length>4)))
             {
                 result = true;
             }
@@ -112,6 +113,10 @@ var habilitarSpan = function (idInput){
 
         case 'Dni':
             dni.style.border = '3px solid orange';
+            break; 
+
+        case 'Comentario':
+            comentario.style.border = '3px solid orange';
             break;
     
         default:
@@ -157,6 +162,10 @@ var deshabilitarSpan = function (e){
 
         case 'Dni':
             dni.style.border = '1px solid blue';
+            break;
+        
+        case 'Comentario':
+            comentario.style.border = '1px solid blue';
             break;
     
         default:
@@ -215,6 +224,7 @@ direccion.addEventListener('blur', verErrores);
 telefono.addEventListener('blur', verErrores);
 email.addEventListener('blur', verErrores);
 dni.addEventListener('blur', verErrores);
+comentario.addEventListener('blur', verErrores);
 
 nombre.addEventListener('focus', deshabilitarSpan);
 edad.addEventListener('focus', deshabilitarSpan);
@@ -222,3 +232,4 @@ direccion.addEventListener('focus', deshabilitarSpan);
 telefono.addEventListener('focus', deshabilitarSpan);
 email.addEventListener('focus', deshabilitarSpan);
 dni.addEventListener('focus', deshabilitarSpan);
+comentario.addEventListener('focus', deshabilitarSpan);
