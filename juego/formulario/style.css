@@ -150,6 +150,7 @@ span{
     color: orange;
     font-size: small;
     margin: 0px;
+    display: none;
 }
 
 .boton{
