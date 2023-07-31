@@ -13,7 +13,7 @@ body{
     color: white;
     flex-direction: column;
     text-align: center; 
-    padding: 5px;
+    padding: 2px;
 }
 
 h1{
@@ -271,16 +271,8 @@ form{
 
 @media (max-width: 768px) {
 
-    .header{
-        height: 6%;
-    }
-
-    main{
-        height: 94%;
-    }
-
     .cabecera{
-        padding: 5px;
+        padding: 2px;
     }
 
     h1{
@@ -331,9 +323,7 @@ form{
     
 }
 
-@media (max-width: 480px) {
-
-    
+@media (max-width: 480px) {   
     .header{
         height: 5%;
     }

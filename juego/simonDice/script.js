@@ -278,7 +278,7 @@ var mostrarSecuencia = function (){
 
         // if(!guardadoViejo)
         // {
-            setearSecuencia(nivelNum);
+            setearSecuencia();
         // }
         // else 
         // {
