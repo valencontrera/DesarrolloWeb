@@ -1,8 +1,8 @@
 //declaracion de variables
 const tituloPrin = document.getElementById('titulo');
-var tituloPrinTexto = "Simón dice";
+var tituloPrinTexto = 'Simón dice';
 var tituloPrinContar = 3;
-var nivelTitulo = "Nivel";
+var nivelTitulo = 'Nivel';
 var nivelNum = 0;
 const nivel = document.getElementById('nivel');
 const comboPuntaje = document.getElementById('comboPuntos');
@@ -28,7 +28,7 @@ const nombre = document.getElementById('nombre');
 const contenedorForm = document.getElementById('contenedorNombre');
 const contenedorBotones = document.getElementById('contenedorBotones');
 const botonEnviar = document.getElementById('enviar');
-var nombreJugador = "";
+var nombreJugador = '';
 
 //metodo que se ejecuta al cargar o recargar la pagina, precarga los datos del localstorage, resetea todas las variables y configura ciertas otras
 var load = function (reiniciar) 
@@ -43,7 +43,7 @@ var load = function (reiniciar)
     tituloPrinContar = 3;
     timerPrender = 1800;
     timerApagar = 2050;
-    nombreJugador = localStorage.getItem('nombreJugador')!="" ? localStorage.getItem('nombreJugador') : "";
+    nombreJugador = localStorage.getItem('nombreJugador')!='' ? localStorage.getItem('nombreJugador') : '';
     if(reiniciar)
     {
         nivelNum = 0;
@@ -55,11 +55,11 @@ var load = function (reiniciar)
         localStorage.removeItem('secuencia');
         localStorage.removeItem('nombreJugador');
         localStorage.removeItem('fecha');
-        nombre.value ="";
+        nombre.value ='';
         puntaje = 0;
         puntajeComponente.textContent = puntaje.toString();
-        contenedorForm.style.display="flex";
-        contenedorBotones.style.display="none";
+        contenedorForm.style.display='flex';
+        contenedorBotones.style.display='none';
         botonEnviar.disabled = true;
     }
     else 
@@ -91,15 +91,15 @@ var load = function (reiniciar)
             localStorage.removeItem('fecha');
             puntaje = 0;
             puntajeComponente.textContent = puntaje.toString();
-            if(nombreJugador!="" && nombreJugador!=null && nombreJugador!=undefined)
+            if(nombreJugador!='' && nombreJugador!=null && nombreJugador!=undefined)
             {
-                contenedorForm.style.display="none";
-                contenedorBotones.style.display="flex";
+                contenedorForm.style.display='none';
+                contenedorBotones.style.display='flex';
             }
             else 
             {
-                contenedorForm.style.display="flex";
-                contenedorBotones.style.display="none";
+                contenedorForm.style.display='flex';
+                contenedorBotones.style.display='none';
             }
             botonEnviar.disabled = true;
         }
@@ -112,19 +112,19 @@ var prenderLuces = function (color)
     switch (color) 
     {
         case 'r':
-            rojo.style.backgroundColor='red';
+            rojo.style.backgroundColor='rgb(255 0 0)';
             rojo.style.boxShadow='inset 2px 4px 12px 17px rgb(255 255 255 / 54%)';
             break;
         case 'v':
-            verde.style.backgroundColor='#08b308';
+            verde.style.backgroundColor='rgb(8, 179, 8)';
             verde.style.boxShadow='inset -4px 5px 12px 17px rgb(255 255 255 / 54%)';
             break; 
         case 'az':
-            azul.style.backgroundColor='blue';
+            azul.style.backgroundColor='rgb(0 255 255)';
             azul.style.boxShadow='inset -2px -4px 12px 17px rgb(255 255 255 / 54%)';
             break; 
         case 'am':
-            amarillo.style.backgroundColor='yellow';
+            amarillo.style.backgroundColor='rgb(255 255 0)';
             amarillo.style.boxShadow='inset 3px -2px 12px 17px rgb(255 255 255 / 54%)';
             break;
         default:
@@ -138,19 +138,19 @@ var apagarLuces = function (color)
     switch (color) 
     {
         case 'r':
-            rojo.style.backgroundColor='#7c0202';
+            rojo.style.backgroundColor='rgb(124, 2, 2)';
             rojo.style.boxShadow='none';
             break;
         case 'v':
-            verde.style.backgroundColor='#025802';
+            verde.style.backgroundColor='rgb(2, 88, 2)';
             verde.style.boxShadow='none';
             break;
         case 'az':
-            azul.style.backgroundColor='#030381';
+            azul.style.backgroundColor='rgb(3, 3, 129)';
             azul.style.boxShadow='none';
             break; 
         case 'am':
-            amarillo.style.backgroundColor='#858503';
+            amarillo.style.backgroundColor='rgb(133, 133, 3)';
             amarillo.style.boxShadow='none';
             break;
         default:
@@ -317,8 +317,8 @@ var habilitarSpan = function (idInput)
 {
     var span = document.getElementById('input'+idInput);
     span.style.display = 'block';
-    botonEnviar.style.marginTop="4px";
-    nombre.style.border = '2px solid orangered';
+    botonEnviar.style.marginTop='4px';
+    nombre.style.border = '2px solid rgb(255 69 0)';
 }
 
 //metodo que llama al corregir par ver si hay error y luego llama el metodo que habilita el error 
@@ -337,7 +337,7 @@ var deshabilitarSpan = function ()
     var span = document.getElementById('inputnombre');
     span.style.display = 'none';
     nombre.style.border = '2px solid rgb(47 7 212 / 78%)';
-    botonEnviar.style.marginTop="17px";
+    botonEnviar.style.marginTop='17px';
 }
 
 //metodo que habilita el boton jugar del formulario solo si esta completo y correcto el nommbre del jugador
@@ -358,8 +358,8 @@ var jugar = function()
 {
     nombreJugador = nombre.value;
     localStorage.setItem('nombreJugador', nombreJugador);
-    contenedorForm.style.display="none";
-    contenedorBotones.style.display="flex";
+    contenedorForm.style.display='none';
+    contenedorBotones.style.display='flex';
     comenzarJuego();
 }
 

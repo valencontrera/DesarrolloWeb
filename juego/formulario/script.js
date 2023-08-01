@@ -85,31 +85,31 @@ var habilitarSpan = function (idInput)
     switch (idInput) 
     {
         case 'Nombre':
-            nombre.style.border = '3px solid orange';
+            nombre.style.border = '3px solid rgb(255, 165, 0)';
             break;
 
         case 'Edad':
-            edad.style.border = '3px solid orange';
+            edad.style.border = '3px solid rgb(255, 165, 0)';
             break;
 
         case 'Direccion':
-            direccion.style.border = '3px solid orange';
+            direccion.style.border = '3px solid rgb(255, 165, 0)';
             break;
 
         case 'Telefono':
-            telefono.style.border = '3px solid orange';
+            telefono.style.border = '3px solid rgb(255, 165, 0)';
             break;
 
         case 'Email':
-            email.style.border = '3px solid orange';
+            email.style.border = '3px solid rgb(255, 165, 0)';
             break;
 
         case 'Dni':
-            dni.style.border = '3px solid orange';
+            dni.style.border = '3px solid rgb(255, 165, 0)';
             break; 
 
         case 'Comentario':
-            comentario.style.border = '3px solid orange';
+            comentario.style.border = '3px solid rgb(255, 165, 0)';
             break;
         default:
             break;
@@ -133,25 +133,25 @@ var deshabilitarSpan = function (e)
     switch (e.srcElement.id) 
     {
         case 'Nombre':
-            nombre.style.border = '1px solid blue';
+            nombre.style.border = '1px solid rgb(0 0 255)';
             break;
         case 'Edad':
-            edad.style.border = '1px solid blue';
+            edad.style.border = '1px solid rgb(0 0 255)';
             break;
         case 'Direccion':
-            direccion.style.border = '1px solid blue';
+            direccion.style.border = '1px solid rgb(0 0 255)';
             break;
         case 'Telefono':
-            telefono.style.border = '1px solid blue';
+            telefono.style.border = '1px solid rgb(0 0 255)';
             break;
         case 'Email':
-            email.style.border = '1px solid blue';
+            email.style.border = '1px solid rgb(0 0 255)';
             break;
         case 'Dni':
-            dni.style.border = '1px solid blue';
+            dni.style.border = '1px solid rgb(0 0 255)';
             break;
         case 'Comentario':
-            comentario.style.border = '1px solid blue';
+            comentario.style.border = '1px solid rgb(0 0 255)';
             break;
         default:
             break;
