@@ -81,35 +81,42 @@ var corregir = function (e)
 var habilitarSpan = function (idInput)
 {
     var span = document.getElementById('input'+idInput);
-    span.style.display = 'block';
+    span.classList.remove('ocultar');
     switch (idInput) 
     {
         case 'Nombre':
-            nombre.style.border = '3px solid rgb(255, 165, 0)';
+            nombre.classList.remove('bordeSinError');
+            nombre.classList.add('bordeError');
             break;
 
         case 'Edad':
-            edad.style.border = '3px solid rgb(255, 165, 0)';
+            edad.classList.remove('bordeSinError');
+            edad.classList.add('bordeError');
             break;
 
         case 'Direccion':
-            direccion.style.border = '3px solid rgb(255, 165, 0)';
+            direccion.classList.remove('bordeSinError');
+            direccion.classList.add('bordeError');
             break;
 
         case 'Telefono':
-            telefono.style.border = '3px solid rgb(255, 165, 0)';
+            telefono.classList.remove('bordeSinError');
+            telefono.classList.add('bordeError');
             break;
 
         case 'Email':
-            email.style.border = '3px solid rgb(255, 165, 0)';
+            email.classList.remove('bordeSinError');
+            email.classList.add('bordeError');
             break;
 
         case 'Dni':
-            dni.style.border = '3px solid rgb(255, 165, 0)';
+            dni.classList.remove('bordeSinError');
+            dni.classList.add('bordeError');
             break; 
 
         case 'Comentario':
-            comentario.style.border = '3px solid rgb(255, 165, 0)';
+            comentario.classList.remove('bordeSinError');
+            comentario.classList.add('bordeError');
             break;
         default:
             break;
@@ -129,29 +136,36 @@ var verErrores = function (e)
 var deshabilitarSpan = function (e)
 {
     var span = document.getElementById('input'+ e.srcElement.id);
-    span.style.display = 'none';
+    span.classList.add('ocultar');
     switch (e.srcElement.id) 
     {
         case 'Nombre':
-            nombre.style.border = '1px solid rgb(0 0 255)';
+            nombre.classList.remove('bordeError');
+            nombre.classList.add('bordeSinError');
             break;
         case 'Edad':
-            edad.style.border = '1px solid rgb(0 0 255)';
+            edad.classList.remove('bordeError');
+            edad.classList.add('bordeSinError');
             break;
         case 'Direccion':
-            direccion.style.border = '1px solid rgb(0 0 255)';
+            direccion.classList.remove('bordeError');
+            direccion.classList.add('bordeSinError');
             break;
         case 'Telefono':
-            telefono.style.border = '1px solid rgb(0 0 255)';
+            telefono.classList.remove('bordeError');
+            telefono.classList.add('bordeSinError');
             break;
         case 'Email':
-            email.style.border = '1px solid rgb(0 0 255)';
+            email.classList.remove('bordeError');
+            email.classList.add('bordeSinError');
             break;
         case 'Dni':
-            dni.style.border = '1px solid rgb(0 0 255)';
+            dni.classList.remove('bordeError');
+            dni.classList.add('bordeSinError');
             break;
         case 'Comentario':
-            comentario.style.border = '1px solid rgb(0 0 255)';
+            comentario.classList.remove('bordeError');
+            comentario.classList.add('bordeSinError');
             break;
         default:
             break;

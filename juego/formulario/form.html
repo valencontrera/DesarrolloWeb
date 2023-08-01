@@ -27,10 +27,10 @@
                                             <label for="Nombre">
                                                 Nombre
                                             </label>
-                                            <input type="text" name="nombre" id="Nombre" placeholder="Ingrese nombre" />
+                                            <input type="text" name="nombre" id="Nombre" class="bordeSinError" placeholder="Ingrese nombre" />
                                         </div>
                                         <div>
-                                            <span id="inputNombre" class ="span">
+                                            <span id="inputNombre" class ="span ocultar">
                                                 *Debe tener al menos una letra o número
                                             </span>
                                         </div>
@@ -40,10 +40,10 @@
                                             <label for="Edad">
                                                 Edad
                                             </label>
-                                            <input type="number" min="18" name="edad" id="Edad" placeholder="Ingrese edad" />
+                                            <input type="number" min="18" name="edad" id="Edad" class="bordeSinError" placeholder="Ingrese edad" />
                                         </div>
                                         <div>
-                                            <span id="inputEdad" class ="span">
+                                            <span id="inputEdad" class ="span ocultar">
                                                 *Debe ser número entero mayor o igual a 18
                                             </span>
                                         </div>
@@ -53,10 +53,10 @@
                                             <label for="Telefono">
                                                 Teléfono
                                             </label>
-                                            <input type="number" min="0" name="telefono" id="Telefono" placeholder="Ingrese teléfono" />
+                                            <input type="number" min="0" name="telefono" id="Telefono" class="bordeSinError" placeholder="Ingrese teléfono" />
                                         </div>
                                         <div>
-                                            <span id="inputTelefono" class ="span">
+                                            <span id="inputTelefono" class ="span ocultar">
                                                 *Debe 7 o más dígitos numéricos y no tener espacio, guiones ni paréntesis
                                             </span>
                                         </div>
@@ -68,10 +68,10 @@
                                             <label for="Email">
                                                 Email
                                             </label>
-                                            <input type="email" name="email" id="Email" placeholder="Ingrese email" />
+                                            <input type="email" name="email" id="Email" class="bordeSinError" placeholder="Ingrese email" />
                                         </div>
                                         <div>
-                                            <span id="inputEmail" class ="span">
+                                            <span id="inputEmail" class ="span ocultar">
                                                 *Formato no válido
                                             </span>
                                         </div>
@@ -81,10 +81,10 @@
                                             <label for="Dni">
                                                 DNI
                                             </label>
-                                            <input type="text" name="dni" id="Dni" placeholder="Ingrese DNI" />
+                                            <input type="text" name="dni" id="Dni" placeholder="Ingrese DNI" class="bordeSinError"/>
                                         </div>
                                         <div>                                
-                                            <span id="inputDni" class ="span">
+                                            <span id="inputDni" class ="span ocultar">
                                                 *Debe tener entre 7 y 8 dígitos numéricos
                                             </span>
                                         </div>
@@ -94,10 +94,10 @@
                                             <label for="Direccion">
                                                 Dirección
                                             </label>
-                                            <input type="text" name="direccion" id="Direccion" placeholder="Ingrese Dirección" />
+                                            <input type="text" name="direccion" id="Direccion" placeholder="Ingrese Dirección" class="bordeSinError"/>
                                         </div>
                                         <div>
-                                            <span class ="span" id="inputDireccion">
+                                            <span class="span ocultar" id="inputDireccion">
                                                 *Debe tener al menos 5 caracteres, con número, letras y un espacio entre medio
                                             </span>
                                         </div>
@@ -110,11 +110,11 @@
                                         <label for="Comentario">
                                             Comentario
                                         </label>
-                                        <textarea name="comentario" id="Comentario" cols="25" rows="5" placeholder="Ingrese su comentario">
+                                        <textarea name="comentario" id="Comentario" cols="25" rows="5" placeholder="Ingrese su comentario" class="bordeSinError">
                                         </textarea>
                                     </div>  
                                     <div id="spanCom">
-                                        <span id="inputComentario">
+                                        <span id="inputComentario" class="ocultar">
                                             *Debe tener al menos 5 caracteres
                                         </span>
                                     </div>             

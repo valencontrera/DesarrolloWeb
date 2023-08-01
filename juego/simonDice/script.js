@@ -44,11 +44,14 @@ var cargar = function (reiniciar)
     timerPrender = 1800;
     timerApagar = 2050;
     nombreJugador = localStorage.getItem('nombreJugador')!='' ? localStorage.getItem('nombreJugador') : '';
+
     if(reiniciar)
     {
         nivelNum = 0;
-        comboPuntaje.style.display='none';
-        nivel.style.display='none';
+        comboPuntaje.classList.remove('mostrar');
+        comboPuntaje.classList.add('ocultar');
+        nivel.classList.remove('mostrar');
+        nivel.classList.add('ocultar');
         localStorage.removeItem('puntaje');
         localStorage.removeItem('nivel');
         localStorage.removeItem('velocidad');
@@ -58,8 +61,10 @@ var cargar = function (reiniciar)
         nombre.value ='';
         puntaje = 0;
         puntajeComponente.textContent = puntaje.toString();
-        contenedorForm.style.display='flex';
-        contenedorBotones.style.display='none';
+        contenedorForm.classList.remove('ocultar');
+        contenedorForm.classList.add('mostrar');
+        contenedorBotones.classList.remove('mostrar');
+        contenedorBotones.classList.add('ocultar');
         botonEnviar.disabled = true;
     }
     else 
@@ -78,12 +83,18 @@ var cargar = function (reiniciar)
             timerPrender = parseInt(localStorage.getItem('velocidad'));
             timerApagar = timerPrender + 250;
             secuenciaSistema = JSON.parse(localStorage.getItem('secuencia'));
+            contenedorForm.classList.remove('mostrar');
+            contenedorForm.classList.add('ocultar');
+            contenedorBotones.classList.remove('ocultar');
+            contenedorBotones.classList.add('mostrar');
         }
         else 
         {
             nivelNum = 0;
-            comboPuntaje.style.display='none';
-            nivel.style.display='none';
+            comboPuntaje.classList.remove('mostrar');
+            comboPuntaje.classList.add('ocultar');
+            nivel.classList.remove('mostrar');
+            nivel.classList.add('ocultar');
             localStorage.removeItem('puntaje');
             localStorage.removeItem('nivel');
             localStorage.removeItem('velocidad');
@@ -91,15 +102,20 @@ var cargar = function (reiniciar)
             localStorage.removeItem('fecha');
             puntaje = 0;
             puntajeComponente.textContent = puntaje.toString();
+
             if(nombreJugador!='' && nombreJugador!=null && nombreJugador!=undefined)
             {
-                contenedorForm.style.display='none';
-                contenedorBotones.style.display='flex';
+                contenedorForm.classList.remove('mostrar');
+                contenedorForm.classList.add('ocultar');
+                contenedorBotones.classList.remove('ocultar');
+                contenedorBotones.classList.add('mostrar');
             }
             else 
             {
-                contenedorForm.style.display='flex';
-                contenedorBotones.style.display='none';
+                contenedorForm.classList.remove('ocultar');
+                contenedorForm.classList.add('mostrar');
+                contenedorBotones.classList.remove('mostrar');
+                contenedorBotones.classList.add('ocultar');
             }
             botonEnviar.disabled = true;
         }
@@ -112,20 +128,20 @@ var prenderLuces = function (color)
     switch (color) 
     {
         case 'r':
-            rojo.style.backgroundColor='rgb(255 0 0)';
-            rojo.style.boxShadow='inset 2px 4px 12px 17px rgb(255 255 255 / 54%)';
+            rojo.classList.remove('apagarRojo');
+            rojo.classList.add('prenderRojo');
             break;
         case 'v':
-            verde.style.backgroundColor='rgb(8, 179, 8)';
-            verde.style.boxShadow='inset -4px 5px 12px 17px rgb(255 255 255 / 54%)';
+            verde.classList.remove('apagarVerde');
+            verde.classList.add('prenderVerde');
             break; 
         case 'az':
-            azul.style.backgroundColor='rgb(0 0 255)';
-            azul.style.boxShadow='inset -2px -4px 12px 17px rgb(255 255 255 / 54%)';
+            azul.classList.remove('apagarAzul');
+            azul.classList.add('prenderAzul');
             break; 
         case 'am':
-            amarillo.style.backgroundColor='rgb(255 255 0)';
-            amarillo.style.boxShadow='inset 3px -2px 12px 17px rgb(255 255 255 / 54%)';
+            amarillo.classList.remove('apagarAmarillo');
+            amarillo.classList.add('prenderAmarillo');
             break;
         default:
             break;
@@ -138,20 +154,20 @@ var apagarLuces = function (color)
     switch (color) 
     {
         case 'r':
-            rojo.style.backgroundColor='rgb(124, 2, 2)';
-            rojo.style.boxShadow='none';
+            rojo.classList.remove('prenderRojo');
+            rojo.classList.add('apagarRojo');
             break;
         case 'v':
-            verde.style.backgroundColor='rgb(2, 88, 2)';
-            verde.style.boxShadow='none';
-            break;
+            verde.classList.remove('prenderVerde');
+            verde.classList.add('apagarVerde');
+            break; 
         case 'az':
-            azul.style.backgroundColor='rgb(3, 3, 129)';
-            azul.style.boxShadow='none';
+            azul.classList.remove('prenderAzul');
+            azul.classList.add('apagarAzul');
             break; 
         case 'am':
-            amarillo.style.backgroundColor='rgb(133, 133, 3)';
-            amarillo.style.boxShadow='none';
+            amarillo.classList.remove('prenderAmarillo');
+            amarillo.classList.add('apagarAmarillo');
             break;
         default:
             break;
@@ -281,8 +297,10 @@ var comenzarJuego = function ()
     {
         nivelNum++;
         nivel.textContent = nivelTitulo + ' ' + nivelNum.toString();
-        nivel.style.display='block';
-        comboPuntaje.style.display='block';
+        nivel.classList.remove('ocultar');
+        nivel.classList.add('mostrar');
+        comboPuntaje.classList.remove('ocultar');
+        comboPuntaje.classList.add('mostrar');
     }
     setTimeout(cuentaRegresiva,1000);
     setTimeout(cuentaRegresiva,2000);
@@ -316,9 +334,12 @@ var corregir = function (e)
 var habilitarSpan = function (idInput)
 {
     var span = document.getElementById('input'+idInput);
-    span.style.display = 'block';
-    botonEnviar.style.marginTop='4px';
-    nombre.style.border = '2px solid rgb(255 69 0)';
+    span.classList.remove('ocultar');
+    span.classList.add('mostrar');
+    nombre.classList.remove('bordeSinError');
+    nombre.classList.add('bordeError'); 
+    botonEnviar.classList.remove('bordeSinErrorBoton');
+    botonEnviar.classList.add('bordeErrorBoton');
 }
 
 //metodo que llama al corregir par ver si hay error y luego llama el metodo que habilita el error 
@@ -335,9 +356,12 @@ var verErrores = function (e)
 var deshabilitarSpan = function ()
 {
     var span = document.getElementById('inputnombre');
-    span.style.display = 'none';
-    nombre.style.border = '2px solid rgb(47 7 212 / 78%)';
-    botonEnviar.style.marginTop='17px';
+    span.classList.remove('mostrar');
+    span.classList.add('ocultar');
+    botonEnviar.classList.remove('bordeErrorBoton');
+    botonEnviar.classList.add('bordeSinErrorBoton');
+    nombre.classList.remove('bordeError');
+    nombre.classList.add('bordeSinError');
 }
 
 //metodo que habilita el boton jugar del formulario solo si esta completo y correcto el nommbre del jugador
@@ -358,8 +382,10 @@ var jugar = function()
 {
     nombreJugador = nombre.value;
     localStorage.setItem('nombreJugador', nombreJugador);
-    contenedorForm.style.display='none';
-    contenedorBotones.style.display='flex';
+    contenedorForm.classList.remove('mostrar');
+    contenedorForm.classList.add('ocultar');
+    contenedorBotones.classList.remove('ocultar');
+    contenedorBotones.classList.add('mostrar');
     comenzarJuego();
 }
 

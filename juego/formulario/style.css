@@ -110,16 +110,15 @@ form>div{
     height: 25px;
     background-color: rgb(173, 216, 230);
     border-radius: 5px;
-    border: 1px solid rgb(0 0 255);
     padding: 5px;
     width: 60%;
 }
 
 .filaGrupo{
-width: 100%;
+    width: 100%;
 }
 
-#spanCom{
+#spanComentario{
     margin: 2px 8px 0 8px;
     display: flex;
     flex-direction: column;
@@ -148,7 +147,6 @@ span{
     color: orange;
     font-size: small;
     margin: 0px;
-    display: none;
 }
 
 .boton{
@@ -178,6 +176,18 @@ span{
     cursor: auto;
     background-color: rgba(48, 7, 212, 0.582);
     color: rgb(179, 179, 179);
+}
+
+.ocultar{
+    display: none;
+}
+
+.bordeError{
+    border:3px solid rgb(255, 165, 0);
+}
+
+.bordeSinError{
+    border:1px solid rgb(0 0 255);
 }
 
 @media (max-width: 768px) {
@@ -298,7 +308,6 @@ span{
         font-size: x-small;
         margin-top: 3px;
         margin-left: 15px;
-        display: flex;
         flex-wrap: wrap;
     }
 
