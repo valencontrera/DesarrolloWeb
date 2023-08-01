@@ -12,16 +12,16 @@ const email = document.getElementById('Email');
 const dni = document.getElementById('Dni');
 const boton = document.getElementById('boton');
 const body = document.getElementById('bodyForm');
-const comentario = document.getElementById('Comentario')
-const formulario = document.getElementById('formulario')
+const comentario = document.getElementById('Comentario');
+const formulario = document.getElementById('formulario');
 
 //metodo que me dice si el input tiene errores
 var corregir = function (e)
-{ 
+{
     var dat = '';
     var result = false;
-
-    switch (e) {
+    switch (e) 
+    {
         case 'Nombre':
             dat = nombre.value;
             if((dat.length != 0 && !(dat.length > 0 && numYletras.test(dat))) || dat.length == 0)
@@ -29,7 +29,6 @@ var corregir = function (e)
                 result = true;
             }
             break;
-
         case 'Edad':
             dat = parseInt(edad.value);
             if(((edad.value).length != 0 && !(dat> 17 && Number.isInteger(dat)))||(edad.value).length == 0)
@@ -37,7 +36,6 @@ var corregir = function (e)
                 result = true;
             }
             break;
-
         case 'Direccion':
             dat = direccion.value;
             if((dat.length != 0 && !(dat.length > 4 && (dat.indexOf(' '))!= -1 && numyLetrasSioSi.test(dat))) || dat.length == 0)
@@ -45,7 +43,6 @@ var corregir = function (e)
                 result = true;
             }
             break;
-
         case 'Telefono':
             dat = parseInt(telefono.value);
             if(((telefono.value).length != 0 && !((telefono.value).length > 6 && ((telefono.value).indexOf(' '))==-1 && soloNumeros.test(dat))) || (telefono.value).length == 0)
@@ -53,7 +50,6 @@ var corregir = function (e)
                 result = true;
             }
             break;
-
         case 'Email':
             dat = email.value;
             if((dat.length !=0 && !(mail.test(dat))) || dat.length == 0)
@@ -61,7 +57,6 @@ var corregir = function (e)
                 result = true;
             }
             break;
-
         case 'Dni':
             dat = dni.value;
             if((dat.length !=0 && !(dat.length > 6 && dat.length < 9 && soloNumeros.test(parseInt(dat)))) || dat.length == 0)
@@ -76,21 +71,19 @@ var corregir = function (e)
                 result = true;
             }
             break;
-
         default:
             break;
     }
-
     return result;
-
 }
 
 //metodo que muestra el error debajo del input del formulario
-var habilitarSpan = function (idInput){
+var habilitarSpan = function (idInput)
+{
     var span = document.getElementById('input'+idInput);
     span.style.display = 'block';
-
-    switch (idInput) {
+    switch (idInput) 
+    {
         case 'Nombre':
             nombre.style.border = '3px solid orange';
             break;
@@ -118,7 +111,6 @@ var habilitarSpan = function (idInput){
         case 'Comentario':
             comentario.style.border = '3px solid orange';
             break;
-    
         default:
             break;
     }
@@ -133,46 +125,38 @@ var verErrores = function (e)
     }
 }
 
-
 //metodo que desaparece el error debajo del input del formulario
-var deshabilitarSpan = function (e){
+var deshabilitarSpan = function (e)
+{
     var span = document.getElementById('input'+ e.srcElement.id);
     span.style.display = 'none';
-
-    switch (e.srcElement.id) {
+    switch (e.srcElement.id) 
+    {
         case 'Nombre':
             nombre.style.border = '1px solid blue';
             break;
-
         case 'Edad':
             edad.style.border = '1px solid blue';
             break;
-
         case 'Direccion':
             direccion.style.border = '1px solid blue';
             break;
-
         case 'Telefono':
             telefono.style.border = '1px solid blue';
             break;
-
         case 'Email':
             email.style.border = '1px solid blue';
             break;
-
         case 'Dni':
             dni.style.border = '1px solid blue';
             break;
-        
         case 'Comentario':
             comentario.style.border = '1px solid blue';
             break;
-    
         default:
             break;
     }
 }
-
 
 //metodo que se ejecuta al apretar enviar
 var enviar = function (event)
@@ -183,19 +167,18 @@ var enviar = function (event)
     window.location.href = mailtoLink;
 }    
 
-
 //metodo que habilita el boton enviar del formulario
-var habiltiarBoton = function (){
-    var input = ['Nombre', 'Dni', 'Edad', 'Email','Direccion','Telefono', 'Comentario']
+var habiltiarBoton = function ()
+{
+    var input = ['Nombre', 'Dni', 'Edad', 'Email','Direccion','Telefono', 'Comentario'];
     var habilitarBoton = true;
-
-    for (let i = 0; i < input.length; i++) {
+    for (let i = 0; i < input.length; i++) 
+    {
         if(corregir(input[i]))
         {
             habilitarBoton = false;
         }
     }
-
     if(habilitarBoton)    
     {
         boton.disabled = false;
@@ -213,9 +196,8 @@ var load = function ()
 }
 
 //eventos
-formulario.addEventListener('keyup', habiltiarBoton)
+formulario.addEventListener('keyup', habiltiarBoton);
 formulario.addEventListener('submit', enviar.bind(this));
-
 window.addEventListener('load', load());
 boton.addEventListener('click', enviar);
 nombre.addEventListener('blur', verErrores);
@@ -225,7 +207,6 @@ telefono.addEventListener('blur', verErrores);
 email.addEventListener('blur', verErrores);
 dni.addEventListener('blur', verErrores);
 comentario.addEventListener('blur', verErrores);
-
 nombre.addEventListener('focus', deshabilitarSpan);
 edad.addEventListener('focus', deshabilitarSpan);
 direccion.addEventListener('focus', deshabilitarSpan);

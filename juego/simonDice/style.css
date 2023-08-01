@@ -39,7 +39,6 @@ section{
     align-items: center;
     width: 100vw;
     height: 100%;
-
 }
 
 article{
@@ -84,7 +83,7 @@ h2{
 }
 
 .nivelYpuntos>h2{
-     margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 #puntaje, .tituloPuntosMax, #puntajeMax{
@@ -104,6 +103,7 @@ h2{
     width: 100%;
     height: 100%;
 }
+
 #contenedorBotones{
     margin-top: 15px;
     margin-bottom: 15px;
@@ -111,7 +111,6 @@ h2{
     justify-content: center;
     flex-wrap: wrap;
 }
-
 
 .botones {
     width:90px;
@@ -236,7 +235,6 @@ form{
     color: orangered;
     font-size: small;
     display: none;
-
 }
 
 .contenedorContacto{
@@ -320,10 +318,10 @@ form{
         height: 25px;
         font-size: 14px;
     }
-    
 }
 
-@media (max-width: 480px) {   
+@media (max-width: 480px) { 
+
     .header{
         height: 5%;
     }
@@ -342,7 +340,6 @@ form{
     section{
         padding: 2px;
         width: 100%;
-
     }
     
     .contenedorPrincipal{

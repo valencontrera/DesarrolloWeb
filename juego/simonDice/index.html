@@ -1,79 +1,108 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Simón dice</title>
-    <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <title>Simón dice</title>
+        <link rel="stylesheet" href="../reset.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
         <header class="header">
             <div class="cabecera">
-                <h1 id="titulo">Simón dice</h1>
+                <h1 id="titulo">
+                    Simón dice
+                </h1>
             </div>       
         </header>
-
         <main>
             <section>
                 <article>
                     <div>
                         <div class="contenedorPrincipal">
                             <div class="nivelYpuntos">
-                                <h2 id="nivel">Nivel</h2>
-                                <div id="comboPuntos"><span class="tituloPuntos">Puntaje: </span><span id="puntaje"></span></div>
-                            </div>
-                            <div><span class="tituloPuntosMax">Puntaje máximo: </span><span id="puntajeMax"></span></div>
-                        </div>
+                                <h2 id="nivel">
+                                    Nivel
+                                </h2>
+                                <div id="comboPuntos">
+                                    <span class="tituloPuntos">
+                                        Puntaje: 
+                                    </span>
+                                    <span id="puntaje">
 
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="tituloPuntosMax">
+                                    Puntaje máximo: 
+                                </span>
+                                <span id="puntajeMax">
+                                </span>
+                            </div>
+                        </div>
                         <div class="contenedorColor">
                             <div class="contenedorColores">
-                                <div id="r" onclick="clickSimon('r')"></div>
-                                <div id="v" onclick="clickSimon('v')"></div>
+                                <div id="r" onclick="clickSimon('r')">
+                                </div>
+                                <div id="v" onclick="clickSimon('v')">
+                                </div>
                             </div>
                             
                             <div class="contenedorColores">
-                                <div id="am" onclick="clickSimon('am')"></div>
-                                <div id="az" onclick="clickSimon('az')"></div>
+                                <div id="am" onclick="clickSimon('am')">
+                                </div>
+                                <div id="az" onclick="clickSimon('az')">
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div id="contenedorBotones">
-                        <button id="comenzarJuego" class="botones" onclick="comenzarJuego()">Jugar</button>
-                        <button id="reiniciarJuego" class="botones" onclick="reiniciarJuego()">Reiniciar</button>
+                        <button id="comenzarJuego" class="botones" onclick="comenzarJuego()">
+                            Jugar
+                        </button>
+                        <button id="reiniciarJuego" class="botones" onclick="reiniciarJuego()">
+                            Reiniciar
+                        </button>
                     </div>
                     <div id="contenedorNombre">
                         <form action="#" id="formulario">
                             <div class="contenedorForm"> 
                                 <div class="form">
-                                    <label for="nombre">Ingrese nombre del jugador</label>
+                                    <label for="nombre">
+                                        Ingrese nombre del jugador
+                                    </label>
                                     <input type="text" name="nombre" id="nombre"/>
                                 </div>
                                 <div class="span">
-                                    <span id="inputnombre">*Debe tener 3 o más letras</span>
+                                    <span id="inputnombre">
+                                        *Debe tener 3 o más letras
+                                    </span>
                                 </div>
                             </div>
                             <div class="boton">                       
-                                <button id="enviar" type="button">Jugar</button>
-                           </div>
+                                <button id="enviar" type="button">
+                                    Jugar
+                                </button>
+                            </div>
                         </form>
                     </div>
                     <div class="contenedorContacto">
                         <img alt="Icono email" src="../contacto.png" class="iconoEmail">
-                        <a href="../formulario/form.html" target="_blank">Contáctenos</a>
+                        <a href="../formulario/form.html" target="_blank">
+                            Contáctenos
+                        </a>
                     </div>
                     <div class="contenedorContacto2">
                         <img alt="Icono GitHub" src="../github.png" class="iconoGit">
-                        <a href="https://github.com/valencontrera/DesarrolloWeb/tree/master/juego" target="_blank">Git HUb</a>
-                      </div>
-                 </article>
+                        <a href="https://github.com/valencontrera/DesarrolloWeb/tree/master/juego" target="_blank">
+                            Git HUb
+                        </a>
+                    </div>
+                </article>
             </section>
-            
         </main>
         <script src="./script.js"></script>
-</body>
-
+    </body>
 </html>

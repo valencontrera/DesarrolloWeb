@@ -1,118 +1,134 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Contacto</title>
-    <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body id="bodyForm">
-        <header class="header">
-            <div class="cabecera">
-                <h1>Contacto</h1>
-            </div>       
-        </header>
-          
-        <main id="form">
-            <section>
-                <article>
-                    <form action="#" id="formulario">
-                    <div>
-                        <div class="col1">
-                            <div class="group">
-                                <div>
-                                    <label for="Nombre">Nombre</label>
-                                    <input type="text" name="nombre" id="Nombre" placeholder="Ingrese nombre" />
-                                </div>
-                                
-                                <div>
-                                  <span id="inputNombre" class ="span">*Debe tener al menos una letra o número</span>
-                                </div>
-                            </div>
-                           
-                            <div class="group">
-                                <div>
-                                    <label for="Edad">Edad</label>
-                                    <input type="number" min="18" name="edad" id="Edad" placeholder="Ingrese edad" />
-                                </div>
-                                
-                                <div>
-                                    <span id="inputEdad" class ="span">*Debe ser número entero mayor o igual a 18</span>
-                                </div>
-                                
-                            </div>
-                            <div class="group"> 
-                                <div>
-                                    <label for="Telefono">Teléfono</label>
-                                    <input type="number" min="0" name="telefono" id="Telefono" placeholder="Ingrese teléfono" />
-                                </div>
-                                <div>
-                                    <span id="inputTelefono" class ="span">*Debe 7 o más dígitos numéricos y no tener espacio, guiones ni paréntesis</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col2">
-                            <div class="group">
-                                <div>
-                                    <label for="Email">Email</label>
-                                    <input type="email" name="email" id="Email" placeholder="Ingrese email" />
-                                </div>
-                                
-                                <div>
-                                    <span id="inputEmail" class ="span">*Formato no válido</span>
-                                </div>
-                                
-                            </div>
-                        
-                            <div class="group">
-                                <div>
-                                    <label for="Dni">DNI</label>
-                                    <input type="text" name="dni" id="Dni" placeholder="Ingrese DNI" />
-                                </div>
-                                <div>                                
-                                    <span id="inputDni" class ="span">*Debe tener entre 7 y 8 dígitos numéricos</span>
-                                </div>
-                            </div>
-                            <div class="group">
-                                <div>
-                                    <label for="Direccion">Dirección</label>
-                                    <input type="text" name="direccion" id="Direccion" placeholder="Ingrese Dirección" />
-                                </div>
-                                
-                                <div>
-                                    <span class ="span" id="inputDireccion">*Debe tener al menos 5 caracteres, con número, letras y un espacio entre medio</span>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="rowGroup">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <title>Contacto</title>
+        <link rel="stylesheet" href="../reset.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body id="bodyForm">
+            <header class="header">
+                <div class="cabecera">
+                    <h1>
+                        Contacto
+                    </h1>
+                </div>       
+            </header>
+            <main id="form">
+                <section>
+                    <article>
+                        <form action="#" id="formulario">
                             <div>
-                                <label for="Comentario">Comentario</label>
-                                <textarea name="comentario" id="Comentario" cols="25" rows="5" placeholder="Ingrese su comentario"></textarea>
-                            </div>  
-                            <div id="spanCom">
-                                <span id="inputComentario">*Debe tener al menos 5 caracteres</span>
-                            </div>             
-                        </div>
-                    </div>
-                    
-                    <div class="boton">                       
-                         <button id="boton" type="submit">Enviar</button>
-                    </div>
-
-                    </form>
-                </article>
-            </section>
-
-        </main>
-<script src="script.js"></script>
-</body>
-
+                                <div class="col1">
+                                    <div class="group">
+                                        <div>
+                                            <label for="Nombre">
+                                                Nombre
+                                            </label>
+                                            <input type="text" name="nombre" id="Nombre" placeholder="Ingrese nombre" />
+                                        </div>
+                                        <div>
+                                            <span id="inputNombre" class ="span">
+                                                *Debe tener al menos una letra o número
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="group">
+                                        <div>
+                                            <label for="Edad">
+                                                Edad
+                                            </label>
+                                            <input type="number" min="18" name="edad" id="Edad" placeholder="Ingrese edad" />
+                                        </div>
+                                        <div>
+                                            <span id="inputEdad" class ="span">
+                                                *Debe ser número entero mayor o igual a 18
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="group"> 
+                                        <div>
+                                            <label for="Telefono">
+                                                Teléfono
+                                            </label>
+                                            <input type="number" min="0" name="telefono" id="Telefono" placeholder="Ingrese teléfono" />
+                                        </div>
+                                        <div>
+                                            <span id="inputTelefono" class ="span">
+                                                *Debe 7 o más dígitos numéricos y no tener espacio, guiones ni paréntesis
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col2">
+                                    <div class="group">
+                                        <div>
+                                            <label for="Email">
+                                                Email
+                                            </label>
+                                            <input type="email" name="email" id="Email" placeholder="Ingrese email" />
+                                        </div>
+                                        <div>
+                                            <span id="inputEmail" class ="span">
+                                                *Formato no válido
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="group">
+                                        <div>
+                                            <label for="Dni">
+                                                DNI
+                                            </label>
+                                            <input type="text" name="dni" id="Dni" placeholder="Ingrese DNI" />
+                                        </div>
+                                        <div>                                
+                                            <span id="inputDni" class ="span">
+                                                *Debe tener entre 7 y 8 dígitos numéricos
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="group">
+                                        <div>
+                                            <label for="Direccion">
+                                                Dirección
+                                            </label>
+                                            <input type="text" name="direccion" id="Direccion" placeholder="Ingrese Dirección" />
+                                        </div>
+                                        <div>
+                                            <span class ="span" id="inputDireccion">
+                                                *Debe tener al menos 5 caracteres, con número, letras y un espacio entre medio
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="rowGroup">
+                                    <div>
+                                        <label for="Comentario">
+                                            Comentario
+                                        </label>
+                                        <textarea name="comentario" id="Comentario" cols="25" rows="5" placeholder="Ingrese su comentario">
+                                        </textarea>
+                                    </div>  
+                                    <div id="spanCom">
+                                        <span id="inputComentario">
+                                            *Debe tener al menos 5 caracteres
+                                        </span>
+                                    </div>             
+                                </div>
+                            </div>
+                            <div class="boton">                       
+                                <button id="boton" type="submit">
+                                    Enviar
+                                </button>
+                            </div>
+                        </form>
+                    </article>
+                </section>
+            </main>
+        <script src="script.js"></script>
+    </body>
 </html>
