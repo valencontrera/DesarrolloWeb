@@ -71,7 +71,7 @@ form>div{
     flex-direction: row;
 }
 
-.row{
+.fila{
     width: 100%;
     margin: 0px 10px 10px 10px;
     justify-content: center;
@@ -85,13 +85,13 @@ form>div{
     width: 50%;
 }
 
-.col1 .group, .col2 .group{
+.col1 .grupo, .col2 .grupo{
     margin: 8px;
     display: flex;
     flex-direction: column;
 }
 
-.col1 .group>div, .col2 .group>div{
+.col1 .grupo>div, .col2 .grupo>div{
     margin: 8px 8px 0 8px;
     display: flex;
     flex-direction: row;
@@ -115,7 +115,7 @@ form>div{
     width: 60%;
 }
 
-.rowGroup{
+.filaGrupo{
 width: 100%;
 }
 
@@ -127,7 +127,7 @@ width: 100%;
     justify-content: center;
 }
 
-.rowGroup label{
+.filaGrupo label{
     margin-right: 8px;
     margin-bottom: 5px;
     font-weight: bold;
@@ -135,7 +135,7 @@ width: 100%;
     font-size:large;
 }
 
-.rowGroup textarea{
+.filaGrupo textarea{
     background-color: rgb(173, 216, 230);
     border-radius: 5px;
     border: 1px solid rgb(0 0 255);
@@ -223,7 +223,7 @@ span{
         margin: 0px;
     } 
 
-    .col1 .group, .col2 .group{
+    .col1 .grupo, .col2 .grupo{
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -231,7 +231,7 @@ span{
         margin:8px 0 ;
     }
 
-    .col1 .group>div, .col2 .group>div{
+    .col1 .grupo>div, .col2 .grupo>div{
         display: flex;
         flex-direction: row;         
         align-items: center;
@@ -310,13 +310,13 @@ span{
         flex-wrap: wrap;
     }
 
-    .col1 .group>div, .col2 .group>div{
+    .col1 .grupo>div, .col2 .grupo>div{
         display: flex;
         flex-direction: column;         
         align-items: flex-start; 
     }
 
-    .group label{
+    .grupo label{
         margin-bottom: 5px;
     }
 

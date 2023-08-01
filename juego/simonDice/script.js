@@ -31,7 +31,7 @@ const botonEnviar = document.getElementById('enviar');
 var nombreJugador = '';
 
 //metodo que se ejecuta al cargar o recargar la pagina, precarga los datos del localstorage, resetea todas las variables y configura ciertas otras
-var load = function (reiniciar) 
+var cargar = function (reiniciar) 
 {
     secuenciaClick=[];
     secuenciaSistema=[];
@@ -227,7 +227,7 @@ var clickSimon = function (color)
             else 
             {
                 alert('Fallaste, vuelve a comenzar de cero');
-                load(true);
+                cargar(true);
             }
             turnoJugador=true;
 
@@ -297,7 +297,7 @@ var comenzarJuego = function ()
 //reinicia todas las variables y comienza de cero el juego
 var reiniciarJuego = function ()
 {
-    load(true);
+    cargar(true);
 }
 
 //metodo que chequea que se complete con letras el nombre del jugador
@@ -364,7 +364,7 @@ var jugar = function()
 }
 
 //eventos
-window.addEventListener('load', load(false));
+window.addEventListener('load', cargar(false));
 nombre.addEventListener('focus', deshabilitarSpan);
 nombre.addEventListener('blur', verErrores);
 nombre.addEventListener('keyup', habiltiarBoton);

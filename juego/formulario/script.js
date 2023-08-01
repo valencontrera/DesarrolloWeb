@@ -190,7 +190,7 @@ var habiltiarBoton = function ()
 }
 
 //metodo que se ejecuta al cargar la pagina
-var load = function () 
+var cargar = function () 
 {
     boton.disabled = true;
 }
@@ -198,7 +198,7 @@ var load = function ()
 //eventos
 formulario.addEventListener('keyup', habiltiarBoton);
 formulario.addEventListener('submit', enviar.bind(this));
-window.addEventListener('load', load());
+window.addEventListener('load', cargar());
 boton.addEventListener('click', enviar);
 nombre.addEventListener('blur', verErrores);
 edad.addEventListener('blur', verErrores);
