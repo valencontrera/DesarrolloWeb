@@ -120,7 +120,7 @@ var prenderLuces = function (color)
             verde.style.boxShadow='inset -4px 5px 12px 17px rgb(255 255 255 / 54%)';
             break; 
         case 'az':
-            azul.style.backgroundColor='rgb(0 255 255)';
+            azul.style.backgroundColor='rgb(0 0 255)';
             azul.style.boxShadow='inset -2px -4px 12px 17px rgb(255 255 255 / 54%)';
             break; 
         case 'am':
@@ -369,3 +369,9 @@ nombre.addEventListener('focus', deshabilitarSpan);
 nombre.addEventListener('blur', verErrores);
 nombre.addEventListener('keyup', habiltiarBoton);
 botonEnviar.addEventListener('click', jugar);
+verde.addEventListener('click', ()=> { clickSimon('v') });
+azul.addEventListener('click', ()=> { clickSimon('az') });
+amarillo.addEventListener('click',()=> { clickSimon('am') });
+rojo.addEventListener('click', ()=> { clickSimon('r') });
+botonComenzarJuego.addEventListener('click', ()=> { comenzarJuego() });
+botonReiniciarJuego.addEventListener('click', ()=> { reiniciarJuego() });

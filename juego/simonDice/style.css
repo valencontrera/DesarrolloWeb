@@ -9,7 +9,7 @@ body{
 
 .cabecera{
     display: flex;
-    background-color: rgba(255, 255, 255, 0.78);
+    background-color: rgb(47 7 212 / 78%);
     color: rgb(255 255 255);
     flex-direction: column;
     text-align: center; 
